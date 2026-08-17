@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #65c9f4;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#gameCanvas {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    color: white;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.hudItem {
+    min-width: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.hudItem:nth-child(2) {
+    text-align: center;
+}
+
+.hudItem:nth-child(3) {
+    text-align: right;
+}
+
+.hudLabel {
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: 0.78;
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(70, 180, 230, 0.12),
+            rgba(40, 110, 170, 0.25)
+        );
+
+    z-index: 20;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menuCard {
+    width: min(620px, calc(100vw - 32px));
+
+    padding: 42px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border-radius: 28px;
+
+    border:
+        5px solid
+        #4da463;
+
+    box-shadow:
+        0 18px 0 rgba(55, 115, 70, 0.45),
+        0 30px 70px rgba(25, 75, 100, 0.28);
+}
+
+.gameLogo {
+    font-size:
+        clamp(
+            44px,
+            8vw,
+            82px
+        );
+
+    line-height: 0.9;
+
+    font-weight: 1000;
+
+    letter-spacing: 2px;
+
+    color: #ef5540;
+
+    text-shadow:
+        0 4px 0 #bd392c,
+        0 8px 18px rgba(180, 55, 40, 0.22);
+}
+
+.gameSubtitle {
+    margin-top: 16px;
+    color: #587180;
+    font-size: 14px;
+}
+
+.heroIcon {
+    width: 76px;
+    height: 76px;
+
+    margin:
+        26px auto
+        24px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffd94f,
+            #ffaf34
+        );
+
+    color: white;
+
+    font-size: 42px;
+
+    border:
+        5px solid
+        #df9527;
+
+    box-shadow:
+        inset 0 5px 0 rgba(255,255,255,.35),
+        0 7px 0 #c78022;
+}
+
+.controlGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+}
+
+.controlBox {
+    padding: 14px 8px;
+
+    border-radius: 14px;
+
+    background:
+        #eef8ff;
+
+    border:
+        2px solid
+        #d8ecf5;
+}
+
+.controlBox strong {
+    display: block;
+
+    color: #e6533d;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.controlBox span {
+    color: #69808c;
+    font-size: 10px;
+}
+
+button {
+    border: none;
+
+    border-radius: 15px;
+
+    padding:
+        16px 34px;
+
+    min-width: 190px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f4674e,
+            #df4734
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 1000;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 0 #b8372a,
+        0 12px 20px rgba(190, 55, 40, 0.2);
+
+    transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease,
+        filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.06);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 0 #b8372a,
+        0 15px 23px rgba(190, 55, 40, 0.23);
+}
+
+button:active {
+    transform:
+        translateY(5px);
+
+    box-shadow:
+        0 2px 0 #b8372a;
+}
+
+.menuTip {
+    margin-top: 20px;
+
+    color: #7b8d97;
+
+    font-size: 10px;
+}
+
+.smallTitle {
+    color: #4da463;
+
+    font-size: 10px;
+
+    font-weight: 1000;
+
+    letter-spacing: 4px;
+}
+
+.winTitle {
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            70px
+        );
+
+    font-weight: 1000;
+
+    color: #49a55c;
+
+    text-shadow:
+        0 4px 0 #31763e;
+}
+
+.resultGrid {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin: 28px 0;
+}
+
+.resultBox {
+    min-width: 140px;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: #eef8ff;
+
+    border:
+        2px solid
+        #d8ecf5;
+}
+
+.resultBox span {
+    display: block;
+
+    color: #7a8a94;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 6px;
+}
+
+.resultBox strong {
+    color: #e6533d;
+    font-size: 23px;
+}
+
+.deathTitle {
+    margin-top: 10px;
+
+    font-size:
+        clamp(
+            46px,
+            8vw,
+            78px
+        );
+
+    font-weight: 1000;
+
+    color: #e6533d;
+
+    text-shadow:
+        0 4px 0 #b8372a;
+}
+
+.deathText {
+    margin:
+        18px 0 28px;
+
+    color: #647984;
+
+    font-size: 13px;
+}
+
+#mobileControls {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 18px;
+
+    padding: 0 18px;
+
+    display: none;
+
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    z-index: 12;
+}
+
+#mobileControls button {
+    min-width: 62px;
+
+    width: 62px;
+    height: 62px;
+
+    padding: 0;
+
+    border-radius: 18px;
+
+    font-size: 23px;
+
+    background:
+        rgba(255,255,255,0.82);
+
+    color: #e6533d;
+
+    border:
+        3px solid
+        rgba(230,83,61,.22);
+
+    box-shadow:
+        0 5px 0
+        rgba(190,55,40,.26);
+}
+
+@media (max-width: 700px) {
+
+    #hud {
+        padding:
+            14px 15px;
+    }
+
+    .hudItem {
+        min-width: 70px;
+        font-size: 17px;
+    }
+
+    .hudLabel {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .menuCard {
+        padding:
+            30px 20px;
+    }
+
+    .controlGrid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    #mobileControls {
+        display: flex;
+        pointer-events: auto;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    #mobileControls {
+        display: flex;
+        pointer-events: auto;
+    }
+}

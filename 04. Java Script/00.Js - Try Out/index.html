@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sunny Quest</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="gameContainer">
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="hud">
+
+            <div class="hudItem">
+                <span class="hudLabel">SCORE</span>
+                <span id="score">000000</span>
+            </div>
+
+            <div class="hudItem">
+                <span class="hudLabel">COINS</span>
+                <span id="coins">00</span>
+            </div>
+
+            <div class="hudItem">
+                <span class="hudLabel">WORLD</span>
+                <span id="world">1-1</span>
+            </div>
+
+        </div>
+
+
+        <div id="startScreen" class="screen">
+
+            <div class="menuCard">
+
+                <div class="gameLogo">
+                    SUNNY QUEST
+                </div>
+
+                <div class="gameSubtitle">
+                    A colorful platform adventure
+                </div>
+
+                <div class="heroIcon">
+                    ★
+                </div>
+
+                <div class="controlGrid">
+
+                    <div class="controlBox">
+                        <strong>A / D</strong>
+                        <span>Move</span>
+                    </div>
+
+                    <div class="controlBox">
+                        <strong>W</strong>
+                        <span>Jump</span>
+                    </div>
+
+                    <div class="controlBox">
+                        <strong>SPACE</strong>
+                        <span>Jump</span>
+                    </div>
+
+                    <div class="controlBox">
+                        <strong>R</strong>
+                        <span>Restart</span>
+                    </div>
+
+                </div>
+
+                <button id="startButton">
+                    START ADVENTURE
+                </button>
+
+                <p class="menuTip">
+                    Collect coins, defeat enemies and reach the flag.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="winScreen" class="screen hidden">
+
+            <div class="menuCard">
+
+                <div class="smallTitle">
+                    WORLD 1-1 COMPLETE
+                </div>
+
+                <div class="winTitle">
+                    LEVEL CLEAR!
+                </div>
+
+                <div class="resultGrid">
+
+                    <div class="resultBox">
+                        <span>SCORE</span>
+                        <strong id="finalScore">
+                            000000
+                        </strong>
+                    </div>
+
+                    <div class="resultBox">
+                        <span>COINS</span>
+                        <strong id="finalCoins">
+                            00
+                        </strong>
+                    </div>
+
+                </div>
+
+                <button id="restartButton">
+                    PLAY AGAIN
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="deathScreen" class="screen hidden">
+
+            <div class="menuCard">
+
+                <div class="smallTitle">
+                    TRY AGAIN
+                </div>
+
+                <div class="deathTitle">
+                    FALLEN!
+                </div>
+
+                <p class="deathText">
+                    The adventure isn't over yet.
+                </p>
+
+                <button id="retryButton">
+                    RETRY LEVEL
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="mobileControls">
+
+            <button id="leftButton">
+                ◀
+            </button>
+
+            <button id="rightButton">
+                ▶
+            </button>
+
+            <button id="jumpButton">
+                ▲
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+</html>
