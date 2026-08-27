@@ -6,7 +6,6 @@ body {
     align-items: center;
     background-color: #c6c2fa;
     font-family: Arial, sans-serif;
-    background-color: #c6c2fa;
 }
 
 
@@ -112,9 +111,32 @@ box-shadow : 8px 8px rgba(0, 0, 0, 0.1);
 }
 
 
+.result-container {
+    background-color: #ffffff;
+    padding: 12px 20px;
+    margin: 20px auto 0;
+    border-radius: 12px;
+}
 
+.result-container p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+}
 
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
 
+    .dice-container {
+        width: 150px;
+        height: 150px;
+    }
+}
 
 
 
