@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c6c2fa;
+    font-family: Arial, sans-serif;
+    background-color: #c6c2fa;
+}
+
+
+.container {
+    background-color: #f0f0f0;
+    height: 450px;
+    width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #2b2750;
+    text-align: center;
+}
+
+
+.container p {
+    font-size: 1.2rem;
+    color: #0f0e0f;
+    text-align: center;
+}
+
+
+.dice-container {
+display : flex;
+justify-content : center;
+align-items : center;
+width : 180px;
+height : 180px;
+margin : 30px auto;
+background-color : #ffffff;
+border-radius : 25px;
+box-shadow : 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.dice {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #222;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.dot1 {
+    top: 20px;
+    left: 20px;
+}
+
+.dot2 {
+    top: 20px;
+    right: 20px;
+}
+
+.dot3 {
+    top : 60px;
+    left : 20px;
+}
+
+.dot4 {
+    bottom: 20px;
+    left: 20px;
+}
+
+.dot5 {
+    bottom: 20px;
+    right: 20px;
+}
+
+.dot6 {
+    top : 60px;
+    right : 20px;
+}
+
+#rollButton {
+    display: block;
+    margin: 10px auto;
+}
+
+.container #rollButton{
+    background-color: #8b5cf6;
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
