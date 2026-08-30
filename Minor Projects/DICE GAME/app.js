@@ -3,8 +3,11 @@ let rollCount = 0;
 let currentRoll = 0;
 
 function rollDice() {
-    let currentRoll = Math.floor(Math.random() * 6) + 1;
-    return currentRoll;
+    return Math.floor(Math.random() * 6) + 1;
 }
 
-let result = rollDice();
+currentRoll = rollDice();
+
+console.log(currentRoll);
+
+while (rollCount < 5) {
