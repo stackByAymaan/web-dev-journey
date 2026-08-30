@@ -289,3 +289,40 @@ console.log(min(2, 5, 1, 8, 3));
 
 
 console.log(" ");
+
+
+
+
+//^ Destructuring
+
+let names = ["tony", "bruce", "peter", "steve"];
+// let winner = name[0];
+// let runnerup = name[1];
+// let secondRunnerup = name[2];
+
+let [winner, runnerup, ...others] = names;
+
+console.log(winner)
+console.log(runnerup)
+console.log(others)
+
+
+console.log(" ");
+
+
+// Destructuring (objects)
+
+const std = {
+    name: "Aymaan",
+    age: 14,
+    class: 9,
+    subject: ["Hindi , English" , "Maths" , "science"],
+    username: "Aymaan123",
+    password: 'abcd'
+};
+
+// let username = std.username;
+// let password = std.password;
+
+let {username : user , password : secret } = std;
+console.log(user , secret);
