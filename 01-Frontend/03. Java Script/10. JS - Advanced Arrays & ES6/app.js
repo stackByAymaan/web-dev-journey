@@ -191,3 +191,69 @@ console.log(" ");
 
 
 
+
+//^ Default parameter
+
+function sum( a, b = 5) {
+    return a + b;
+}
+
+console.log(sum(2));
+console.log(sum(2,5));
+
+
+console.log(" ");
+
+//^ Spread
+let arrayy = [ 2, 3, 4, 5, 6, 7, 8, 8];
+console.log(...arrayy);
+
+
+let array = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 4, 2, ];
+let minVal = Math.min(...array);
+console.log(minVal);
+
+
+console.log(" ");
+
+// Spread (Array literals)
+let number = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 4, 2, ];
+let newArr = [...number];
+console.log(newArr);
+console.log(newArr.push(1000));
+
+
+console.log( " ");
+
+let char = [..."hello"];
+console.log(char);
+
+console.log( " ");
+
+let odd = [ 1, 3, 5, 7];
+let even = [ 2, 4, 6, 8];
+
+let numberr = [...odd , ...even];
+console.log(numberr);
+
+
+
+console.log( " ");
+
+
+// Spread (object literals)
+
+let data = {
+    email: "ironman@gmail.com",
+    password: "abcd",
+};
+
+const dataCopy = {...data, ID : 123}
+console.log(dataCopy);
+
+let ary =[ 1, 2, 3, 4, 5];
+let obj = {...ary};
+console.log(obj);
+
+
+console.log(" ");
