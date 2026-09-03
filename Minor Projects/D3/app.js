@@ -42,12 +42,12 @@
 
 // printTable(5);
 
-let x = 10;
+// let x = 10;
 
-function test() {
-    let x = 20;
-    console.log(x);
-}
+// function test() {
+//     let x = 20;
+//     console.log(x);
+// }
 
-test();
-console.log(x);
+// test();
+// console.log(x);
