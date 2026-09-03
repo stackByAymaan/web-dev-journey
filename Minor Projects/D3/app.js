@@ -1,6 +1,9 @@
-let nums = [4, 17, 8, 23, 11, 6, 30];
-for (let i = 0; i < nums.length; i++) {
-          if(nums[i] > 10) {
-            console.log(nums[i]);
-          }
+let prices = [120, 80, 250, 60, 300];
+let total = 0;
+for(let i = 0; i < prices.length; i++) {
+    if(prices[i] > 100) {
+        total = total + prices[i];
+        console.log(prices[i]);
+        console.log(total);
+    }
 }
