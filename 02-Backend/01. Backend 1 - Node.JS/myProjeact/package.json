@@ -1,0 +1,19 @@
+{
+  "name": "myprojeact",
+  "version": "1.0.0",
+  "description": "This is firts project",
+  "license": "ISC",
+  "author": "Aymaan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "a": "^4.0.8",
+    "figlet": "^1.11.3",
+    "give": "^2.0.0",
+    "joke": "^0.0.1-1",
+    "me": "^0.3.0"
+  }
+}
