@@ -79,3 +79,32 @@ SELECT * FROM user;
 
 SELECT name, followers
 FROM user;
+
+
+
+--^ WHERE Clause
+
+SELECT * FROM user
+WHERE followers >= 200;                    -- WHERE Clause
+
+SELECT * FROM user
+WHERE followers >= 200
+AND age > 13;                               -- AND
+
+SELECT * FROM user
+WHERE age < 16
+OR followers > 1000;                        -- OR
+
+SELECT * FROM user
+WHERE age BETWEEN 13 AND 20;                -- BETWEEN
+
+SELECT name, followers, email
+FROM user
+WHERE email IN (
+    "rahul@gmail.com",
+    "arjun@gmail.com",
+    "priya@gmail.com"
+);                                           -- IN
+
+SELECT * FROM user
+WHERE age NOT IN (14, 18);
