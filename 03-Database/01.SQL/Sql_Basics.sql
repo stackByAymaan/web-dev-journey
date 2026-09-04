@@ -60,3 +60,22 @@ CREATE TABLE user (
 );
 
 SHOW TABLES;
+
+
+--^ INSERT
+
+INSERT INTO user
+(id, age, name, email, followers, following)
+VALUES
+(1, 14, "Aymaan", "Ayman@gmail.com", 909, 0),
+(2, 18, "Rahul", "rahul@gmail.com", 1550, 20),
+(3, 21, "Priya", "priya@gmail.com", 230, 45),
+(4, 16, "Arjun", "arjun@gmail.com", 87, 12);
+
+
+--^ SELECT
+
+SELECT * FROM user;
+
+SELECT name, followers
+FROM user;
