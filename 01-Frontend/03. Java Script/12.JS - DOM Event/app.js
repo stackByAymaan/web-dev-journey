@@ -69,3 +69,26 @@ form.addEventListener("submit", function (event) {
 
     alert(`Hi ${user.value}, your password is ${pass.value}`);
 });
+
+
+//Event bubling
+let div = document.querySelector("div");
+let ul = document.querySelector("ul");
+let lis = document.querySelectorAll("li");
+
+div.addEventListener("click", function() {
+    console.log("div was cooked");
+});
+
+
+ul.addEventListener("click", function(event) {
+    event.stopPropogation();
+    console.log("ul was clicked");
+});
+
+
+for (lis of lis) {
+    lis.addEventListner("click", function() {
+       console.log("list was clicked");
+    });
+}
