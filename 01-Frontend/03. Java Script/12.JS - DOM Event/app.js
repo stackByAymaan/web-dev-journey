@@ -38,3 +38,14 @@ inp.addEventListener("keydown", function (event) {
 inp.addEventListener("keyup", function () {
     console.log("Key was released");
 });
+// Form Event
+let form = document.querySelector("form");
+
+let user = document.querySelector("#user");
+let pass = document.querySelector("#pass");
+
+// INPUT EVENT
+user.addEventListener("input", function () {
+    console.log("User is typing...");
+    console.log(user.value);
+});
