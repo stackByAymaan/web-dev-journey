@@ -72,3 +72,19 @@ let box = document.querySelector(".box");
 box.addEventListener("mouseenter", function() {
     console.log("mouse inside div");
 });
+
+
+//This with event listner 
+let Thisbtn = document.querySelector(".Thisbtn");
+let h1 = document.querySelector("h1")
+
+// Thisbtn.addEventListener("click", function(){
+//     console.dir(this.innerText);
+//     this.style.background = 'blue';
+// });
+
+
+// h1.addEventListener("click", function(){
+//     console.dir(this.innerText);
+//     this.style.background = 'blue';
+// });
