@@ -49,3 +49,23 @@ user.addEventListener("input", function () {
     console.log("User is typing...");
     console.log(user.value);
 });
+
+
+
+// CHANGE EVENT
+pass.addEventListener("change", function () {
+    console.log("Password field changed");
+    console.log(pass.value);
+});
+
+// SUBMIT EVENT
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log("Form Submitted");
+
+    console.log(user.value);
+    console.log(pass.value);
+
+    alert(`Hi ${user.value}, your password is ${pass.value}`);
+});
