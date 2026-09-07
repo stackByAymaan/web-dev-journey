@@ -1,0 +1,56 @@
+body{
+    text-align: center;
+}
+
+
+div {
+
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.btn {
+    margin-bottom: 70px;
+}
+
+.heading {
+    margin-top: 100px;
+}
+
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 1px solid black
+    
+}
+
+.Thisbtn{
+    margin-top: 30px;
+}
+
+.Keybtn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.evnt{
+    text-align: justify;
+    background-color: pink;
+    height: 200px;
+    width: 400px;
+    margin-top: 50px;
+}
+
+
+ul {
+    background-color: blue;
+}
+
+li{
+    background-color: greenyellow;
+}
