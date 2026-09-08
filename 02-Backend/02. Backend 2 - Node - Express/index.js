@@ -63,5 +63,42 @@ app.get("/{*any}", (req, res) => {
 });
 
 
+// =====================================
+// Catch-all Route for All HTTP Methods
+// =====================================
+
+// Handles all HTTP methods (GET, POST, PUT, DELETE, etc.)
+// Runs only when no matching route exists.
+
+// app.all("/{*any}", (req, res) => {
+//     res.send("404 - This path does not exist");
+// });
+
+
+// =====================================
+// app.use() Example
+// =====================================
+
+// app.use() runs for every incoming request by default.
+// 'req' contains request information.
+// 'res' is used to send a response back to the client.
+
+app.use((req, res) => {
+
+    // console.log(req);
+
+    console.log("Request received");
+
+    res.send("This is a basic response");
+
+    // Example: Sending an object as a response.
+    // Express automatically converts it into JSON.
+
+    // res.send({
+    //     name: "Apple",
+    //     color: "Red",
+    // });
+
+});
 
 
