@@ -34,6 +34,16 @@ app.get("/contact", (req, res) => {
 });
 
 
+// =====================================
+//* Routing (post Requests)
+// =====================================
+
+// app.post("/home", (req, res) => {
+//     res.send("Data received");
+// });
+
+
+
 //Path parameters
 app.get("/:username/:id", (req, res) => {
     // console.log(req.params);
