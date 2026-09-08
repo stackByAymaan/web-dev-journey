@@ -42,5 +42,19 @@ app.get("/:username/:id", (req, res) => {
 });
 
 
+//Query String
+app.get("/search", (req, res) => {
+    console.log(req.query);
+
+    let { q } = req.query;
+
+    if (!q) {
+        res.send("<h1>Nothing Searched</h1>");
+    } else {
+        res.send(`Search Results for: ${q}`);
+    }
+});
+
+
 
 
