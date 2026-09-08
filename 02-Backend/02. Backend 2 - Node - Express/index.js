@@ -14,5 +14,25 @@ app.listen(port, () => {
 });
 
 
+// =====================================
+// Routing (GET Requests)
+// =====================================
+
+// Home Route
+app.get("/home", (req, res) => {
+    res.send("Home page !!");
+});
+
+// Shop Route
+app.get("/shop", (req, res) => {
+    res.send("You can shop here !!");
+});
+
+// Contact Route
+app.get("/contact", (req, res) => {
+    res.send("You can contact us here");
+});
+
+
 
 
