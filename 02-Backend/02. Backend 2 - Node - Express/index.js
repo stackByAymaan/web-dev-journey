@@ -56,5 +56,12 @@ app.get("/search", (req, res) => {
 });
 
 
+// Catch-all Route (Express 5)
+// Handles any GET request whose route doesn't exist.
+app.get("/{*any}", (req, res) => {
+    res.send("This path does not exist");
+});
+
+
 
 
