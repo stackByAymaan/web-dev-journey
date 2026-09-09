@@ -168,3 +168,25 @@ savetoDb1("Helooooooooooooo")
 });
 
 
+// Refering old code 
+let headingPromise = document.querySelector("h2");
+
+function changeColorPromise(color, delay) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            headingPromise.style.color = color;
+            resolve("color changed");
+        }, delay);
+    });
+}
+
+changeColorPromise("red", 1000)
+    .then(() => {
+        return changeColorPromise("orange", 1000);
+    })
+    .then(() => {
+        return changeColorPromise("green", 1000);
+    })
+    .catch(() => {
+        console.log("something went wrong");
+    });
