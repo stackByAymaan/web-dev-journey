@@ -135,3 +135,36 @@ request.then(() => {
     console.log(request);
 });
 
+
+//Promises chaining
+function savetoDb1(data) {
+    return new Promise((resolve , reject) => {
+        let interSpeed1 = Math.floor(Math.random() * 10) + 1;
+        if (interSpeed1 > 4) {
+            resolve ("Succes : data was saved");
+        } else {
+            reject(" failure : weak internet");
+        }
+    });
+}
+
+
+savetoDb1("Helooooooooooooo")
+.then((result) => {
+    console.log("data1 saved");
+    return savetoDb1("Helo world", result);
+})
+.then((result) => {
+    console.log("data2 saved");
+    return savetoDb1("Aymaaaaaaaaan", result);
+})
+.then((result) => {
+    console.log("data3 saved");
+    return savetoDb1("Aymaaaaaaaaan Humdaaaannnnn", result);
+})
+.catch((error) => {
+    console.log("promise was rejected");
+    console.log(error);
+});
+
+
