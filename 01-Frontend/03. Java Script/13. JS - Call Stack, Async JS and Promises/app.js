@@ -111,3 +111,27 @@ console.log(" ");
 //         console.log("Failure : weak connection. data not saved");
 //     });
 
+
+//Doing this by using promises
+function savetoDb(data) {
+    return new Promise((resolve , reject) => {
+        let interSpeed = Math.floor(Math.random() * 10) + 1;
+        if (interSpeed > 4) {
+            resolve ("Succes : data was saved");
+        } else {
+            reject(" failure : weak internet");
+        }
+    });
+}
+
+
+let request = savetoDb("apna college");
+request.then(() => {
+    console.log("promises was resolved");
+    console.log(request);
+})
+.catch(() => {
+    console.log("promise was rejected");
+    console.log(request);
+});
+
