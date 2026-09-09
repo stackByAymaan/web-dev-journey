@@ -44,3 +44,70 @@ three();
 
 
 
+//Callback Hell
+h1 = document.querySelector("h1");
+
+// setTimeout(() => {
+//     h1.style.color = "red";
+// }, 1000);
+
+// setTimeout(() => {
+//     h1.style.color = "Blue";
+// }, 2000);
+
+// setTimeout(() => {
+//     h1.style.color = "Green";
+// }, 3000);
+
+function changeColor(color, delay, nextColorChange) {
+    setTimeout(() => {
+        h1.style.color = color;
+        if (nextColorChange) nextColorChange();
+    }, delay);
+}
+
+// changeColor("red", 1000);
+// changeColor("green",2000);
+// changeColor("blue", 3000);
+
+changeColor("red", 1000, () => {
+    changeColor("orange", 1000, () => {
+        changeColor("green", 1000);
+    });
+});
+
+
+
+console.log(" ");
+
+
+// Promises
+
+// function savetoDb(data, success, failure) {
+//     let internetSpeed = Math.floor(Math.random() * 10) + 1;
+//     // if(internetSpeed > 4) {
+//     //     console.log("your data was saved");
+//     // } else {
+//     //     console.log("weak connection. data not saved");
+//     // }
+
+
+//     if (internetSpeed > 4) {
+//         success();
+//     } else {
+//         failure();
+//     }
+
+// }
+// savetoDb("Apna clg", () => {
+//     console.log("Sucess : your data was saved");
+//     savetoDb("Hello World", () => {
+//         console.log("success2: data2 saved");
+//     }, () => {
+//         console.log("Failure2 : weak connection")
+//     })
+// },
+//     () => {
+//         console.log("Failure : weak connection. data not saved");
+//     });
+
