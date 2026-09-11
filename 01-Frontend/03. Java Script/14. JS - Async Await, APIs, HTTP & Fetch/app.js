@@ -132,3 +132,27 @@ console.log(" ");
 
 
 //* API -API (Application Programming Interface) is a set of rules that allows two software applications to communicate and exchange data with each other.
+
+
+
+//JSON 
+
+//Accessing JSON (String data in JS object)
+
+let jsonRes =
+'{"fact":"Cats and kittens should be acquired in pairs whenever possible as cat families interact best in pairs.","length":102}';
+
+console.log(jsonRes); //We can't apply JS property and methods like jsonRes.fact , jsonRes.length
+
+let validRes = JSON.parse(jsonRes);
+console.log(validRes.fact) // Now we can use js property
+
+
+//Parse a JS object data into JSON
+let student = {
+    name : "Aymaan",
+    marks : 99,
+};
+
+let studentJson = JSON.stringify(student);
+console.log(studentJson);
