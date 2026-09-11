@@ -129,3 +129,6 @@ demo();
 
 
 console.log(" ");
+
+
+//* API -API (Application Programming Interface) is a set of rules that allows two software applications to communicate and exchange data with each other.
