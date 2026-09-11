@@ -29,3 +29,14 @@ greet1()
 .catch((err) => {
     console.log("promise was rejected wit err : ", err);
 });
+
+
+//using arrow function with async
+let num = async () => {
+    return 5;
+};
+console.log(num());
+
+
+
+console.log(" ");
