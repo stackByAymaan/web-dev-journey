@@ -40,3 +40,24 @@ console.log(num());
 
 
 console.log(" ");
+
+
+
+//* Await Keyword
+
+function getNum() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            resolve(num1);
+        }, 1000);
+    });
+}
+
+async function demo() {
+    console.log(await getNum());
+    console.log(await getNum());
+    console.log(await getNum());
+}
+
+demo();
