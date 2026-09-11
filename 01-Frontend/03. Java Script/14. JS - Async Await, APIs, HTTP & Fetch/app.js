@@ -180,3 +180,27 @@ fetch(url)
     });
 
 
+
+
+//Using Fetch with async Function
+
+let url1 = "https://catfact.ninja/fact";
+
+async function getFact() {
+    try {
+        let response = await fetch(url1);
+        let data1 = await response.json();
+        console.log(data1.fact);
+
+        let response2 = await fetch(url1);
+        let data2 = await response2.json();
+        console.log(data2.fact);
+
+    } catch (err) {
+        console.log("error - ", err);
+    }
+
+    console.log("bye");
+}
+
+getFact();
