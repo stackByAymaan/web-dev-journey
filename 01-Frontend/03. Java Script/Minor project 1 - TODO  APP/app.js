@@ -27,3 +27,13 @@ btn.addEventListener("click" , function () {
 //         // console.log("element deleted");
 //     });
 // }
+
+
+//Event Delegation
+ul.addEventListener("click", function(event) {
+      if (event.target.nodeName == "BUTTON") {
+        let listItem = event.target.parentElement;
+        listItem.remove();
+        console.log("delete");
+      } 
+});
