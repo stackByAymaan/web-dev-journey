@@ -91,3 +91,29 @@ li {
 .delete:hover {
     background: #dc2626;
 }
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .box {
+        padding: 20px;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    .input-area button {
+        width: 100%;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .delete {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
