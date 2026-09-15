@@ -82,3 +82,12 @@ li {
 
     word-break: break-word;
 }
+
+.delete {
+    background: #ef4444;
+    flex-shrink: 0;
+}
+
+.delete:hover {
+    background: #dc2626;
+}
