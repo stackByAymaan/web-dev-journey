@@ -16,3 +16,14 @@ btn.addEventListener("click" , function () {
     //   console.log(inp.value);
       inp.value = "";
 });
+
+
+// let delBtns = document.querySelectorAll(".delete");
+
+// for (let delBtn of delBtns) {
+//     delBtn.addEventListener("click", function () {
+//         let par = this.parentElement;
+//         par.remove();
+//         // console.log("element deleted");
+//     });
+// }
