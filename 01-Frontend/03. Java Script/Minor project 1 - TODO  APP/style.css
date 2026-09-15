@@ -64,3 +64,21 @@ button {
 button:hover {
     background: #1d4ed8;
 }
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    word-break: break-word;
+}
