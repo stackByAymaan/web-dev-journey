@@ -13,3 +13,39 @@ body {
     align-items: center;
     padding: 20px;
 }
+
+
+.box {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.input-area {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+}
