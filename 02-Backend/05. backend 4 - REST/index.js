@@ -12,14 +12,17 @@ app.use(express.urlencoded({ extended: true }));
 
 let posts = [
     {
+        id:"1a",
         username :"apnacollege",
         content : "I love coding"
     },
     {
+        id:"2b",
         username :"Aymaan",
         content : "Aymaan is trash , he got reject in his 1st internship"
     },
     {
+        id:"3b",
         username :"modi",
         content : "PM of india"
     }
@@ -36,10 +39,19 @@ app.get("/posts/new", (req, res) => {
 });
 
 
+app.get("/posts/:id", (req, res) => {
+    let {id} = req.params;
+    let post= posts.find((p) => id === p.id);
+    
+    // console.log(id);
+    // res.send("request working");
+});
+
+
 app.post("/posts", (req, res) => {
     let { username, content } = req.body;
     posts.push({ username, content });
-    res.send("Post request working");
+    res.redirect("/posts");
 });
 
 app.listen(port, () => {
