@@ -42,7 +42,8 @@ app.get("/posts/new", (req, res) => {
 app.get("/posts/:id", (req, res) => {
     let {id} = req.params;
     let post= posts.find((p) => id === p.id);
-    
+    // console.log(post);
+    res.render("show.ejs" , {post});
     // console.log(id);
     // res.send("request working");
 });
