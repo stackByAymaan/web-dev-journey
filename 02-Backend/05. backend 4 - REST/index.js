@@ -42,7 +42,6 @@ app.get("/posts/new", (req, res) => {
 });
 
 
-
 app.post("/posts", (req, res) => {
     let { username, content } = req.body;
     let newId = uuidv4();
@@ -61,8 +60,17 @@ app.get("/posts/:id", (req, res) => {
 
 app.patch("/posts/:id" , (req, res) => {
     let { id } = req.params;
+    let newContent = req.body.content;
+    let post= posts.find((p) => id === p.id);
+    post.content = newContent;
+    console.log(post);
     console.log(id);
     res.send("patch request working");
+});
+
+app.get("/posts/:id/edit", (req, res) => {
+    let { id } = req.params;
+    let post = posts.find((p) => id === p.id);
 });
 
 app.listen(port, () => {
