@@ -103,10 +103,13 @@ app.get("/posts/:id/edit", (req, res) => {
     res.render("edit.ejs", { post });
 });
 
-app.delete("/post/:id", (req, res) => {
+
+// Deleting Post
+app.delete("/posts/:id", (req, res) => {
     let { id } = req.params;
-    let post = posts.find((p) => id === p.id);
-    res.send("delete success");
+    // let post = posts.find((p) => id === p.id);
+    posts = posts.filter((p) => p.id !== id);
+    res.redirect("/posts");
 });
 
 
