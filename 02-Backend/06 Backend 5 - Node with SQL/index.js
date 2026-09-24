@@ -36,6 +36,21 @@ try {
     console.log(err);
 }
 
+let q = "INSERT INTO user (id, username, email, password) VALUES ?";
+
+let users = [
+    ["101", "Aymaan", "aymaan@gmail.com", "aymaan123"],
+    ["102", "Rahul", "rahul@gmail.com", "rahul123"],
+    ["103", "Anish", "anish@gmail.com", "anish123"],
+    ["104", "Imroj", "imroj@gmail.com", "imroj123"],
+    ["105", "Arjun", "arjun@gmail.com", "arjun123"],
+    ["106", "Rohan", "rohan@gmail.com", "rohan123"]
+];
+
+connection.query(q, [users], (err, result) => {
+    if (err) throw err;
+    console.log(result);
+});
 
 let getRandomUser = () => {
     return {
