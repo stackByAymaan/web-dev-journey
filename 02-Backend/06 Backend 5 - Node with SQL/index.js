@@ -10,13 +10,16 @@ const connection = mysql.createConnection({
     password: "Aymaanhumdaan@123"
 });
 
+//* Inserting New Data
+let q ="INSERT INTO user (id, username, email, password) VALUES ( ?, ?, ?, ?)";
+let user = ["123", "123_newuser", "abc@gmail.com", "abc"];
+
+
 try {
-    connection.query("SHOW TABLES", (err, result) => {
+    connection.query(q, user, (err, result) => {
         if (err) throw err;
         console.log(result);
-        console.log(result.length);
-        console.log(result[0]);
-        console.log(result[1]);
+        
     });
 } catch (err) {
     console.log(err);
