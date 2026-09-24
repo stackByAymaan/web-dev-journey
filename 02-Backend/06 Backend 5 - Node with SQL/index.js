@@ -27,7 +27,8 @@ let users = [
 
 
 try {
-    connection.query(q, user, (err, result) => {
+    // connection.query(q, user, (err, result) => {
+    connection.query(q, [user], (err, result) => {
         if (err) throw err;
         console.log(result);
         
