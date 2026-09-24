@@ -17,11 +17,12 @@ const connection = mysql.createConnection({
 //Inserting multiple data
 let q ="INSERT INTO user (id, username, email, password) VALUES (?)";
 let users = [
-    ["101", "aymaan_dev", "aymaan@gmail.com", "pass101"],
-    ["102", "anish_codes", "anish@gmail.com", "pass102"],
-    ["103", "imroj_web", "imroj@gmail.com", "pass103"],
-    ["104", "rahul_dev", "rahul@gmail.com", "pass104"],
-    ["105", "sneha_js", "sneha@gmail.com", "pass105"],
+    ["101", "Aymaan", "aymaan@gmail.com", "aymaan123"],
+    ["102", "Rahul", "rahul@gmail.com", "rahul123"],
+    ["103", "Anish", "anish@gmail.com", "anish123"],
+    ["104", "Imroj", "imroj@gmail.com", "imroj123"],
+    ["105", "Arjun", "arjun@gmail.com", "arjun123"],
+    ["106", "Rohan", "rohan@gmail.com", "rohan123"]
 ];
 
 
