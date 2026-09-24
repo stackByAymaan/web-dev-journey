@@ -33,33 +33,40 @@ const connection = mysql.createConnection({
 
 //* Inerting Data in Bulk
 
-let q = "INSERT INTO user (id, username, email, password) VALUES ?";
-let data = [];
-let getRandomUser = () => {
-    return [
-        faker.string.uuid(),
-        faker.internet.username(),
-        faker.internet.email(),
-        faker.internet.password(),
-    ];
-};
+// let q = "INSERT INTO user (id, username, email, password) VALUES ?";
+// let data = [];
+// let getRandomUser = () => {
+//     return [
+//         faker.string.uuid(),
+//         faker.internet.username(),
+//         faker.internet.email(),
+//         faker.internet.password(),
+//     ];
+// };
 
-for (let i = 1; i <= 100; i++) {
-    data.push(getRandomUser());
-}
-
-try {
-    // connection.query(q, user, (err, result) => {
-    connection.query(q, [data], (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        connection.end();
-    });
-} catch (err) {
-    console.log(err);
-}
+// for (let i = 1; i <= 100; i++) {
+//     data.push(getRandomUser());
+// }
 
 
-app.listen("8080", () => {
+
+app.get("/", (req, res) => {
+    let q = `SELECT count(*) FROM user`;
+
+    try {
+        connection.query(q, (err, result) => {
+            if (err) throw err;
+
+            console.log(result[0]["count(*)"]); //accessing the actual count value from the result returned by MySQL
+            return res.send("Sucess");
+        });
+    } catch (err) {
+        console.log(err);
+        return res.send("Some error in Database");
+    }
+});
+
+
+app.listen(port, () => {
     console.log(`listening on port ${port}`);
 });
