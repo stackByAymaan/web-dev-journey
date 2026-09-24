@@ -28,11 +28,10 @@ let users = [
 
 try {
     // connection.query(q, user, (err, result) => {
-    connection.query(q, [user], (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        
-    });
+    connection.query(q, [users], (err, result) => {
+    if (err) throw err;
+    console.log(result);
+});
 } catch (err) {
     console.log(err);
 }
