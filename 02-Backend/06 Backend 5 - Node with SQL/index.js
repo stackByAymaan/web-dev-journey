@@ -88,6 +88,11 @@ app.get("/user", (req, res) => {
     }
 });
 
+//* Edit
+app.get("/user/:id/edit", (req, res) => {
+    let {id} = req.params;
+    res.render("edit.ejs");
+});
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
