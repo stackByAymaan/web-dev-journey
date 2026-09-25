@@ -55,6 +55,7 @@ const connection = mysql.createConnection({
 
 
 
+
 app.get("/", (req, res) => {
     let q = `SELECT count(*) FROM user`;
 
@@ -70,6 +71,8 @@ app.get("/", (req, res) => {
         return res.send("Some error in Database");
     }
 });
+
+
 
 
 //* Show
@@ -88,11 +91,26 @@ app.get("/user", (req, res) => {
     }
 });
 
+
+
+
 //* Edit
 app.get("/user/:id/edit", (req, res) => {
-    let {id} = req.params;
-    res.render("edit.ejs");
+    let { id } = req.params;
+    let q = `SELECT * FROM user WHERE id = '${id}'`;
+    try {
+        connection.query(q, (err, result) => {
+            if (err) throw err;
+            let user = result[0];
+            return res.render("edit.ejs", { user });
+        });
+    } catch (err) {
+        console.log(err);
+        return res.send("Some error in DB");
+    }
 });
+
+
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
