@@ -5,6 +5,11 @@ const mysql = require("mysql2");   // Import MySQL2
 const express = require("express");
 const app = express();
 const port = 8080;
+const path = require("path");
+
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 
 const connection = mysql.createConnection({
@@ -57,12 +62,29 @@ app.get("/", (req, res) => {
         connection.query(q, (err, result) => {
             if (err) throw err;
 
-            console.log(result[0]["count(*)"]); //accessing the actual count value from the result returned by MySQL
-            return res.send("Sucess");
+            let count = result[0]["count(*)"]; //accessing the actual count value from the result returned by MySQL
+            return res.render("home.ejs" , { count });
         });
     } catch (err) {
         console.log(err);
         return res.send("Some error in Database");
+    }
+});
+
+
+//* Show
+app.get("/user", (req, res) => {
+    let q = `SELECT * FROM user`;
+    try {
+        connection.query(q, (err, result) => {
+            if (err) throw err;
+            // console.log(result);
+            return res.send(result);
+        });
+
+    } catch (err) {
+        console.log(err);
+        return res.send("Some error in DB");
     }
 });
 
