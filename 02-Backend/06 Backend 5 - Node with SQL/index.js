@@ -111,9 +111,34 @@ app.get("/user/:id/edit", (req, res) => {
     }
 });
 
-//* Update (DB) route
 app.patch("/user/:id", (req, res) => {
-    res.send("Updated");
+
+    let { id } = req.params;
+    let { password: formPass, username: newUsername } = req.body;
+
+    console.log("Form password length:", formPass.length);
+
+    let q = `SELECT * FROM user WHERE id='${id}'`;
+    try {
+        connection.query(q, (err, result) => {
+            if (err) throw err;
+            let user = result[0];
+            console.log("DB password length:", user.password.length);
+            console.log("Password match:", formPass === user.password);
+            if (formPass != user.password) {
+                return res.send("WRONG password");
+            } else {
+                let q2 = `UPDATE user SET username='${newUsername}' WHERE id='${id}'`;
+                connection.query(q2, (err, result) => {
+                    if (err) throw err;
+                    res.redirect("/user");
+                });
+            }
+        });
+    } catch (err) {
+        console.log(err);
+        res.send("some error in DB");
+    }
 });
 
 
