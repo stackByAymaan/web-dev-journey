@@ -97,15 +97,23 @@
 <body>
 
     <div class="container">
-        <h1>Edit Username: <%= user.email %></h1>
-        <form>
+        <h1>Edit Username: <%= user.email %>
+        </h1>
+        <form method="POST" action="/user/<%= user.id %>?_method=PATCH">
+
             <label>Username</label>
+
             <textarea name="username"><%= user.username %></textarea>
+
             <label>Password</label>
+
             <input type="password" name="password" placeholder="Enter your password">
+
             <button type="submit">Edit</button>
+
         </form>
     </div>
 
 </body>
+
 </html>

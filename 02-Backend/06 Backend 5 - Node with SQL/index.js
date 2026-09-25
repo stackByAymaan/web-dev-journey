@@ -6,8 +6,10 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const path = require("path");
+const methodOverride = require("method-override");
 
-
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -93,7 +95,6 @@ app.get("/user", (req, res) => {
 
 
 
-
 //* Edit
 app.get("/user/:id/edit", (req, res) => {
     let { id } = req.params;
@@ -110,6 +111,10 @@ app.get("/user/:id/edit", (req, res) => {
     }
 });
 
+//* Update (DB) route
+app.patch("/user/:id", (req, res) => {
+    res.send("Updated");
+});
 
 
 app.listen(port, () => {
