@@ -32,6 +32,7 @@
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
         }
 
         table {
@@ -54,6 +55,41 @@
         tr:hover {
             background: #f1f1f1;
         }
+
+        button {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        /* Media Query */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .table-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
     </style>
 
 </head>
@@ -70,6 +106,7 @@
                 <th>ID</th>
                 <th>Email</th>
                 <th>Username</th>
+                <th>Edit</th>
             </tr>
 
             <% for(user of users) { %>
@@ -78,6 +115,12 @@
                     <td><%= user.id %></td>
                     <td><%= user.email %></td>
                     <td><%= user.username %></td>
+
+                    <td>
+                        <form method="GET" action="/user/<%= user.id %>/edit">
+                            <button>Edit Username</button>
+                        </form>
+                    </td>
                 </tr>
 
             <% } %>
