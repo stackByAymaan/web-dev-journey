@@ -137,3 +137,30 @@ async function main() {
 //     course: "BCA",
 //     age: { $gte: 20 }
 // })
+
+
+
+// 8. UPDATE in DB
+// // Update one document
+// db.students.updateOne(
+//     { name: "Aymaan" },
+//     { $set: { age: 21 } }
+// )
+
+// // Update multiple documents
+// db.students.updateMany(
+//     { course: "BCA" },
+//     { $set: { status: "Active" } }
+// )
+
+// // Increase age by 1
+// db.students.updateOne(
+//     { name: "Aymaan" },
+//     { $inc: { age: 1 } }
+// )
+
+// // Add a new field
+// db.students.updateOne(
+//     { name: "Aymaan" },
+//     { $set: { skills: "JavaScript" } }
+// )
