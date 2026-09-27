@@ -43,3 +43,13 @@ async function main() {
 // db.createCollection("students")
 
 // db.students.find()
+
+
+
+// 4. INSERT in DB (insertOne)
+// db.students.insertOne({
+//     name: "Aymaan",
+//     age: 20,
+//     course: "BCA",
+//     city: "Ranchi"
+// })
