@@ -14,4 +14,24 @@ async function main() {
 }
 
 
+// 1. The Mongo Shell
 
+// Run these commands in mongosh:
+
+// show dbs
+
+// use collegeDB
+
+// db
+
+// show collections
+// 2. How We Store Data? (BSON)
+
+// MongoDB stores data as BSON documents. We write them using JavaScript-style syntax.
+
+// {
+//     name: "Aymaan",
+//     age: 20,
+//     course: "BCA",
+//     isStudent: true
+// }
