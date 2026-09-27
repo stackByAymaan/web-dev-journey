@@ -75,3 +75,23 @@ async function main() {
 //         city: "Delhi"
 //     }
 // ])
+
+
+// 6. FIND in DB
+// // Find all documents
+// db.students.find()
+
+// // Find a specific student
+// db.students.find({
+//     name: "Aymaan"
+// })
+
+// // Find students from Ranchi
+// db.students.find({
+//     city: "Ranchi"
+// })
+
+// // Find the first matching document
+// db.students.findOne({
+//     course: "BCA"
+// })
