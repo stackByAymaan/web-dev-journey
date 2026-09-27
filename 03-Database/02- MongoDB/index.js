@@ -95,3 +95,45 @@ async function main() {
 // db.students.findOne({
 //     course: "BCA"
 // })
+
+
+
+// 7. Query Operators
+// // Greater than
+// db.students.find({
+//     age: { $gt: 19 }
+// })
+
+// // Less than
+// db.students.find({
+//     age: { $lt: 21 }
+// })
+
+// // Greater than or equal to
+// db.students.find({
+//     age: { $gte: 20 }
+// })
+
+// // Less than or equal to
+// db.students.find({
+//     age: { $lte: 20 }
+// })
+
+// // Not equal to
+// db.students.find({
+//     course: { $ne: "BCA" }
+// })
+
+// // OR condition
+// db.students.find({
+//     $or: [
+//         { city: "Ranchi" },
+//         { age: 21 }
+//     ]
+// })
+
+// // AND condition
+// db.students.find({
+//     course: "BCA",
+//     age: { $gte: 20 }
+// })
