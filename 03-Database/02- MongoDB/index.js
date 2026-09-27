@@ -164,3 +164,48 @@ async function main() {
 //     { name: "Aymaan" },
 //     { $set: { skills: "JavaScript" } }
 // )
+
+
+
+// 9. Nesting
+
+// A MongoDB document can contain another document inside it.
+
+// db.students.insertOne({
+//     name: "Aymaan",
+//     age: 20,
+//     course: "BCA",
+
+//     address: {
+//         city: "Ranchi",
+//         state: "Jharkhand",
+//         pincode: 834001
+//     }
+// })
+
+// // Find using a nested field
+// db.students.find({
+//     "address.city": "Ranchi"
+// })
+
+// // Update a nested field
+// db.students.updateOne(
+//     { name: "Aymaan" },
+//     { $set: { "address.city": "Delhi" } }
+// )
+
+
+
+// 10. DELETE in DB
+// // Delete one document
+// db.students.deleteOne({
+//     name: "Aymaan"
+// })
+
+// // Delete multiple documents
+// db.students.deleteMany({
+//     course: "BCA"
+// })
+
+// // Delete all documents
+// db.students.deleteMany({})
