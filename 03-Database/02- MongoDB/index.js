@@ -35,3 +35,11 @@ async function main() {
 //     course: "BCA",
 //     isStudent: true
 // }
+
+
+// 3. Document & Collection
+// use collegeDB
+
+// db.createCollection("students")
+
+// db.students.find()
