@@ -53,3 +53,25 @@ async function main() {
 //     course: "BCA",
 //     city: "Ranchi"
 // })
+
+// 5. INSERT in DB (insertMany)
+// db.students.insertMany([
+//     {
+//         name: "Rahul",
+//         age: 21,
+//         course: "BCA",
+//         city: "Ranchi"
+//     },
+//     {
+//         name: "Aman",
+//         age: 20,
+//         course: "BBA",
+//         city: "Patna"
+//     },
+//     {
+//         name: "Priya",
+//         age: 19,
+//         course: "BCA",
+//         city: "Delhi"
+//     }
+// ])
