@@ -1,1 +1,148 @@
-<!-- Updated project -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Pattern Practice</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        h1 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        .pattern {
+            background: #020617;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            color: #4ade80;
+            font: 20px monospace;
+            line-height: 1.8;
+            white-space: pre;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 30px;
+        }
+
+        pre {
+            background: #020617;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .logic {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        button {
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Java Pattern Practice</h1>
+        <p>Question: Print a hollow square pattern for n = 5.</p>
+
+        <h2>Expected Output</h2>
+        <div class="pattern" id="pattern"></div>
+
+        <h2>Java Solution</h2>
+        <pre><code>public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+
+                if (i == 1 || i == n ||
+                    j == 1 || j == n) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}</code></pre>
+
+        <h2>Logic</h2>
+        <div class="logic">
+            <p>1. The outer loop controls rows.</p>
+            <p>2. The inner loop controls columns.</p>
+            <p>3. Print a star on the boundary.</p>
+            <p>4. Print spaces inside the square.</p>
+        </div>
+
+        <button onclick="showPattern()">
+            Generate Pattern
+        </button>
+    </div>
+
+    <script>
+        function showPattern() {
+            const n = 5;
+            let output = "";
+
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n; j++) {
+                    if (
+                        i === 1 || i === n ||
+                        j === 1 || j === n
+                    ) {
+                        output += "* ";
+                    } else {
+                        output += "  ";
+                    }
+                }
+                output += "\n";
+            }
+
+            document.getElementById("pattern")
+                .textContent = output;
+        }
+
+        showPattern();
+    </script>
+</body>
+</html>
