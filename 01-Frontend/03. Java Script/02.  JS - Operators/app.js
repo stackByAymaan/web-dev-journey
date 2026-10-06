@@ -40,7 +40,7 @@ console.log("A" > "!");
 
 // ^ small chracter unicode > capital chracter - a < b < c < d < e.....< A < B < C < D < E.....
 
-// Logical Operators - logical and = &&, logical or = || logical not = !
+// Logical Operators 
 let marks = 12;
 
 // if (marks >= 33 && marks >= 80 ) {
