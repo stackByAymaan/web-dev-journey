@@ -84,7 +84,7 @@ select {
 }
 
 .expenses {
-    background-color: #ffbd86;
+    background-color: #FFBD86;
     padding: 15px;
     margin-top: 15px;
     border-radius: 10px;
@@ -94,7 +94,33 @@ select {
     margin: 5px 0 0;
 }
 
+.expense-item {
+    background-color: #EFECD7;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.expense-item p {
+    margin: 0;
+}
+
+.delete-btn {
+    background-color: #B93636;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
+
     .container {
         width: 94%;
         padding: 12px;
@@ -108,5 +134,9 @@ select {
     .total-expense,
     .expenses {
         padding: 12px;
+    }
+
+    .expense-item {
+        flex-wrap: wrap;
     }
 }
