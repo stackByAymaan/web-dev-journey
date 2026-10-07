@@ -1,5 +1,5 @@
 body {
-    background-image: url("background.jpg");
+    background-image: url("background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,4 +67,15 @@ select {
     padding: 20px;
     margin-top: 20px;
     border-radius: 12px;
+}
+
+.messages {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.messages p {
+    margin-top: 10px;
 }
