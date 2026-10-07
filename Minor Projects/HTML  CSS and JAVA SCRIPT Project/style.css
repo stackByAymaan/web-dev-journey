@@ -1,6 +1,8 @@
 body {
-    background-color: #FFF2A0;
-    font-family: Arial, sans-serif;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -32,9 +34,37 @@ label {
 }
 
 input {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
+}
+
+
+#add-expense {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #B93636;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.total-expense {
+    background-color: #fff2A0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
 }
