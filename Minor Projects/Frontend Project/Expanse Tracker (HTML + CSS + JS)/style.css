@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 10px auto;
+    background-color: #D1EDD3;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+h1 {
+    background-color: #7D9C65;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 30px;
+}
+
+.expense-form {
+    margin-top: 15px;
+}
+
+.expense-form h2,
+.total-expense h2,
+.expenses h2 {
+    margin: 0 0 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+#add-expense {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #B93636;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.total-expense {
+    background-color: #FFF2A0;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.total-expense p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #B93636;
+}
+
+.expenses {
+    background-color: #ffbd86;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.expenses p {
+    margin: 5px 0 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 25px;
+        padding: 12px;
+    }
+
+    .total-expense,
+    .expenses {
+        padding: 12px;
+    }
+}
