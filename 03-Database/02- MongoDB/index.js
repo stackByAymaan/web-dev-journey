@@ -65,7 +65,7 @@ const User = mongoose.model('User', userSchema);
 
 
 //*Find
-User.find({age : {$gt: 50}})
+User.find({ age: { $gt: 50 } })
   .then((res) => {
     console.log(res[0].name);
   })
@@ -74,11 +74,25 @@ User.find({age : {$gt: 50}})
   });
 
 
-  //*Update
-  User.updateOne({name : "Bruce"}, {age: 59}).then((res) => {
-     console.log(res);
-  }).catch((err) => {
+//*Update
+User.updateOne({ name: "Bruce" }, { age: 59 }).then((res) => {
+  console.log(res);
+}).catch((err) => {
+  console.log(err);
+});
+
+
+User.updateMany(
+  { age: { $lt: 40 } },
+  { $set: { age: 40 } }
+)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
     console.log(err);
   });
+
+
 
 
