@@ -11,6 +11,6 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "mongoose": "^9.9.4"
+    "mongoose": "^9.11.1"
   }
 }
