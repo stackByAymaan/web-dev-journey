@@ -30,5 +30,19 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 
+//* Insert
+// const user1 = new User({
+//   name: "Adam",
+//   email: "Adam@gmail.com",
+//   age: 40,
+// });
 
+// user1
+//   .save()
+//   .then(res => {
+//     console.log(res);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
 
