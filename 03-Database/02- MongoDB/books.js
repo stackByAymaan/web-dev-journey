@@ -26,3 +26,18 @@ const bookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model("Book", bookSchema);
+
+let book1 = new Book({
+  title: "The Alchemist",
+  author: "Paulo Coelho",
+  price: 299,
+});
+
+book1
+  .save()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
