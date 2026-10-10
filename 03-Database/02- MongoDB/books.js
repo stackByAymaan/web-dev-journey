@@ -27,6 +27,11 @@ const bookSchema = new mongoose.Schema({
     required: true, // Price is mandatory
     min: [1, "Price must be at least 1"], // Minimum price is 1
   },
+  genre: {
+  type: String,
+  enum: ["Fiction", "Fantasy", "Mystery", "Horror"],
+  required: true, // Genre must be provided
+}
 });
 
 // Create Model
@@ -37,6 +42,7 @@ let book1 = new Book({
   title: "The Alchemist",
   author: "Paulo Coelho",
   price: 299,
+  genre: "Fiction",
 });
 
 // Save the document and handle the result
