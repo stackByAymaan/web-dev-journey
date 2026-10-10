@@ -26,5 +26,9 @@ const userSchema = new mongoose.Schema({
   age: Number,
 });
 
+//* Model
+const User = mongoose.model('User', userSchema);
+
+
 
 
