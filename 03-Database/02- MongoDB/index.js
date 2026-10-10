@@ -94,5 +94,19 @@ User.updateMany(
   });
 
 
+//* Find and Update
+User.findOneAndUpdate(
+  { name: "Bruce" },
+  { age: 60 },
+  { new: true } // Returns the updated document instead of the original document.
+)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
 
 
