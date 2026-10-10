@@ -46,3 +46,25 @@ const User = mongoose.model('User', userSchema);
 //     console.log(err);
 //   });
 
+
+//* Insert Multiple
+
+// User.insertMany([
+//   { name: "Tony", email: "tony@gmail.com", age: 35 },
+//   { name: "Steve", email: "steve@gmail.com", age: 39 },
+//   { name: "Bruce", email: "bruce@gmail.com", age: 38 },
+//   { name: "Thor", email: "thor@gmail.com", age: 1500 },
+//   { name: "Natasha", email: "natasha@gmail.com", age: 32 },
+// ])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+
+
+
+
+
