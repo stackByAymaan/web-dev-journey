@@ -74,4 +74,11 @@ User.find({age : {$gt: 50}})
   });
 
 
+  //*Update
+  User.updateOne({name : "Bruce"}, {age: 59}).then((res) => {
+     console.log(res);
+  }).catch((err) => {
+    console.log(err);
+  });
+
 
