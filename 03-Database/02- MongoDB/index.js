@@ -108,5 +108,22 @@ User.findOneAndUpdate(
   });
 
 
+//* Find by ID and Update
+User.findByIdAndUpdate(
+  "6aca727045805a49a178fc84",
+  { age: 41 },
+  { new: true }
+)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+
+
+
 
 
