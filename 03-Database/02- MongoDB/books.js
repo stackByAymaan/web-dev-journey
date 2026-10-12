@@ -28,10 +28,10 @@ const bookSchema = new mongoose.Schema({
     min: [1, "Price must be at least 1"], // Minimum price is 1
   },
   genre: {
-  type: String,
-  enum: ["Fiction", "Fantasy", "Mystery", "Horror"],
-  required: true, // Genre must be provided
-}
+    type: String,
+    enum: ["Fiction", "Fantasy", "Mystery", "Horror"],
+    required: true, // Genre is mandatory
+  },
 });
 
 // Create Model
@@ -45,12 +45,18 @@ let book1 = new Book({
   genre: "Fiction",
 });
 
-// Save the document and handle the result
+// Save the document and handle validation errors
 book1
   .save()
   .then((res) => {
     console.log(res);
   })
   .catch((err) => {
-    console.log(err); // Handles validation or database errors
+    if (err.name === "ValidationError") {
+      for (const field in err.errors) {
+        console.log(err.errors[field].properties.message);
+      }
+    } else {
+      console.log(err);
+    }
   });
