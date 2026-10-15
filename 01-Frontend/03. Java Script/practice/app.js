@@ -17,13 +17,44 @@
 // console.log(rollDice());
 
 
-function sum(a, b) {
-    return a + b;
-}
+// function sum(a, b) {
+//     return a + b;
+// }
 
-let result = sum(10, 20);
-console.log(result); 
+// let result = sum(10, 20);
+// console.log(result); 
 
 
-// function with argument return ke pahle th aoder shi s ekr waal saale  aur iske baad pooora scope ek hi baar mein aache se smajanhan then expale ya question typrkeke aage then ktm 
+// function printInfo(name, age) {
+//     console.log(`${name}'s age is ${age}`);
+// }
+
+// printInfo("Aymaan", 20);
+// printInfo("Anish", 19);
+
+//scope
+// let sum1 = 54;
+
+// function printSum() {
+//     console.log(sum1);
+// }
+
+// printSum();
+// console.log(sum1);
+
+
+
+// function outerFunc() {
+//     let x = 5;
+//     let y = 6;
+
+//     function innerFunc() {
+//         console.log(x);
+//     }
+
+//     innerFunc();
+// }
+
+// outerFunc();
+
 
