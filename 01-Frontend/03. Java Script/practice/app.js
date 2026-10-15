@@ -11,7 +11,19 @@
 // checkPrice(prices);
 
 
-function rollDice() {
-    return Math.floor(Math.random() * 6) + 1;
+// function rollDice() {
+//     return Math.floor(Math.random() * 6) + 1;
+// }
+// console.log(rollDice());
+
+
+function sum(a, b) {
+    return a + b;
 }
-console.log(rollDice());
+
+let result = sum(10, 20);
+console.log(result); 
+
+
+// function with argument return ke pahle th aoder shi s ekr waal saale  aur iske baad pooora scope ek hi baar mein aache se smajanhan then expale ya question typrkeke aage then ktm 
+
