@@ -77,3 +77,13 @@
 // changeGreet();
 
 
+let name = "Aymaan";
+
+function greet() {
+    let name = "Anish";
+    console.log(name);
+}
+
+console.log(name);
+greet();
+console.log(name);
