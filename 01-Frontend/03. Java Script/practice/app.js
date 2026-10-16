@@ -106,14 +106,44 @@
 
 
 
-function multipleGreett(func, count) {
+// function multipleGreett(func, count) {
+//     for (let i = 1; i <= count; i++) {
+//         func();
+//     }
+// }
+
+// let greett = function() {
+//     console.log("hiii");
+// };
+
+// multipleGreett(greett, 3);
+
+
+
+
+// function repeatTask(func, count) {
+//     for (let i = 1; i <= count; i++) {
+//         func();
+//     }
+// }
+
+// function showTask() {
+//     console.log("Practice JavaScript");
+// }
+
+// repeatTask(showTask, 2);
+
+
+function execute(func, count) {
     for (let i = 1; i <= count; i++) {
         func();
     }
 }
+ 
+function sayHello() {
+    console.log("Hello");   
+}
 
-let greett = function() {
-    console.log("hiii");
-};
+execute(sayHello, 30);
 
-multipleGreett(greett, 3);
+
