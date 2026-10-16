@@ -104,3 +104,16 @@
 // console.log(checkPrice(800));
 
 
+
+
+function multipleGreett(func, count) {
+    for (let i = 1; i <= count; i++) {
+        func();
+    }
+}
+
+let greett = function() {
+    console.log("hiii");
+};
+
+multipleGreett(greett, 3);
