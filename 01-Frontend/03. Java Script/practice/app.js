@@ -77,13 +77,30 @@
 // changeGreet();
 
 
-let name = "Aymaan";
+// let name = "Aymaan";
 
-function greet() {
-    let name = "Anish";
-    console.log(name);
-}
+// function greet() {
+//     let name = "Anish";
+//     console.log(name);
+// }
 
-console.log(name);
-greet();
-console.log(name);
+// console.log(name);
+// greet();
+// console.log(name);
+
+
+// const sumExp = function(a, b) {
+//     return a + b;
+// };
+
+// console.log(sumExp(2, 3));
+
+// let checkPrice = function(prices) {
+//     if (prices > 500) {
+//         return `price ${prices} is greater than 500`;
+//     } 
+// };
+
+// console.log(checkPrice(800));
+
+
