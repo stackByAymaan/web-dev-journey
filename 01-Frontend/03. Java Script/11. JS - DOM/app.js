@@ -16,15 +16,14 @@ console.dir(document.querySelector(".oldImg"));
 
 console.dir(document.querySelectorAll("p"));
 
-
-
 console.log(" ");
 
 let para = document.querySelector('p');
 console.dir(para);
 console.dir(para.innerText);
 console.dir(para.innerHTML);
-console.dir(para.innerContent);
+console.dir(para.textContent);
+//* Changed innerContent to textContent because innerContent is not a standard DOM property.
 
 
 console.log("");
@@ -35,9 +34,7 @@ let heading = document.querySelector('h1');
 console.dir(heading.innerHTML = `<u>${heading.innerText}</u>`);
 
 
-
 console.log(" ");
-
 
 
 //Getter and Setter
@@ -45,11 +42,10 @@ console.log(" ");
 
 // img.getAttribute('id');   //Getter
 
-// img.setAttributeNS('id', 'spidermanImg'); //Setter
+// img.setAttribute('id', 'spidermanImg'); //Setter
+//* Changed setAttributeNS to setAttribute because this is a normal HTML attribute.
 
 // img.setAttribute('src', "creation_3.jpeg")
-
-
 
 
 // let img = document.querySelector('img');
@@ -62,15 +58,13 @@ console.dir(heading1.style);
 
 heading1.style.color = 'red';
 heading1.style.backgroundColor = 'blue';
- 
 
 
 console.log(" ");
 
 
-
 let links = document.querySelectorAll('.box a');
-for (let I = 0 ; I < links.length; I++) {
+for (let I = 0; I < links.length; I++) {
     links[I].style.color = 'red';
 }
 
@@ -79,17 +73,16 @@ console.log(" ");
 
 let heading2 = document.querySelector('h1');
 console.dir(heading2.classList);
-heading2.classList.add("abc")
+heading2.classList.add("abc");
 console.dir(heading2.classList);
 
 
 console.log(" ");
 
 
-//Nvigation
+//Navigation
 let h4 = document.querySelector('h4');
 console.dir(h4.parentElement);
-
 
 
 // Adding Elements
@@ -102,24 +95,27 @@ newP.innerText = " Hi, I am a new p";
 console.dir(newP);
 
 
-// inside body tag or any where inside tag 
+// inside body tag or any where inside tag
 let box = document.querySelector('.box');
 box.appendChild(newP);
 
+
 //creating button
 let btn = document.createElement('button');
-console.dir('btn');
 console.dir(btn);
+//* Changed console.dir('btn') to console.dir(btn) to inspect the actual button element.
+
 btn.innerText = " click me !!";
 box.appendChild(btn);
 
 
-//append  (add -> last)
+//append (add -> last)
 newP.append("This is new text");
 
 newP.append(btn);
 
 newP.append("yo yo yo yo yo yo yo");
+
 
 //prepent (add -> first)
 box.prepend(newP);
@@ -140,11 +136,7 @@ let p = document.querySelector('p');
 p.insertAdjacentElement('beforeEnd' , btn);
 
 
-
 //Removing elements
 
 // btn.remove();
 // p.remove();
-
-
-
