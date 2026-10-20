@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101426">
+    <title>CodeQuest | Quiz Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- JavaScript will be added here as you learn quiz logic and DOM events. -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-glow glow-one" aria-hidden="true"></div>
+    <div class="page-glow glow-two" aria-hidden="true"></div>
+
+    <div class="app-shell">
+        <!-- Global header: branding and lightweight navigation. -->
+        <header class="topbar">
+            <a class="brand" href="#home" aria-label="CodeQuest home">
+                <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+                <span>Code<span class="brand-accent">Quest</span></span>
+            </a>
+
+            <nav class="top-nav" aria-label="Main navigation">
+                <a href="#how-it-works">How it works</a>
+                <span class="nav-divider" aria-hidden="true"></span>
+                <span class="mode-pill"><span class="status-dot"></span> Practice Arena</span>
+            </nav>
+        </header>
+
+        <main id="home">
+            <!-- START SCREEN: visible on page load. JS will read the selected options and hide this screen when the quiz starts. -->
+            <section id="setup-screen" class="hero-section" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <div class="eyebrow"><span class="eyebrow-icon">✦</span> YOUR NEXT LEVEL STARTS HERE</div>
+                    <h1 id="hero-title">Think sharp.<br><span class="gradient-text">Code smarter.</span></h1>
+                    <p class="hero-description">A little practice every day goes a long way. Test your JavaScript basics, build your confidence, and see how far your logic takes you.</p>
+
+                    <div class="hero-stats" aria-label="Quiz details">
+                        <div class="hero-stat">
+                            <span class="stat-icon purple-icon" aria-hidden="true">▦</span>
+                            <span><strong>10 questions</strong><small>Per round</small></span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-icon mint-icon" aria-hidden="true">◷</span>
+                            <span><strong>Timed challenge</strong><small>Stay focused</small></span>
+                        </div>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="note-star" aria-hidden="true">✦</span>
+                        <span>Learn by playing. Improve one answer at a time.</span>
+                    </div>
+                </div>
+
+                <!-- SETUP CARD: category and difficulty are future JavaScript controls, not wired up yet. -->
+                <div class="setup-card">
+                    <div class="card-topline">
+                        <span class="card-kicker">READY PLAYER ONE?</span>
+                        <span class="level-tag"><span class="level-dot"></span> LET'S BEGIN</span>
+                    </div>
+
+                    <div class="setup-heading-row">
+                        <div>
+                            <h2>Choose your challenge</h2>
+                            <p>Make it yours before you start.</p>
+                        </div>
+                        <div class="trophy-illustration" aria-hidden="true">
+                            <span class="trophy-star">★</span>
+                            <span class="trophy-cup">♜</span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="category-select">Challenge topic</label>
+                        <div class="select-wrap">
+                            <select id="category-select" name="category">
+                                <option value="javascript">JavaScript basics</option>
+                                <option value="web">HTML &amp; CSS</option>
+                                <option value="mixed">Mixed web development</option>
+                            </select>
+                            <span class="select-chevron" aria-hidden="true">⌄</span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="difficulty-select">Difficulty</label>
+                        <div class="select-wrap">
+                            <select id="difficulty-select" name="difficulty">
+                                <option value="easy">Beginner · Warm up</option>
+                                <option value="medium">Intermediate · Level up</option>
+                            </select>
+                            <span class="select-chevron" aria-hidden="true">⌄</span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="question-count-select">Questions per round</label>
+                        <div class="select-wrap">
+                            <select id="question-count-select" name="question-count">
+                                <option value="5">5 questions · Quick play</option>
+                                <option value="10" selected>10 questions · Standard</option>
+                                <option value="15">15 questions · Brain workout</option>
+                            </select>
+                            <span class="select-chevron" aria-hidden="true">⌄</span>
+                        </div>
+                    </div>
+
+                    <button id="start-quiz-btn" class="primary-button" type="button">
+                        <span>Start challenge</span><span class="button-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="privacy-note"><span aria-hidden="true">⌁</span> No pressure. Just progress.</div>
+                </div>
+            </section>
+
+            <!-- SUPPORTING CARDS: static information on the start screen. -->
+            <section id="how-it-works" class="feature-section" aria-label="How the quiz works">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">YOUR PRACTICE, YOUR PACE</span>
+                        <h2>Small rounds. Real progress.</h2>
+                    </div>
+                    <p>Built for curious minds and future developers.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon icon-purple" aria-hidden="true">◷</div>
+                        <div><h3>Beat the clock</h3><p>A simple countdown keeps each question moving.</p></div>
+                        <span class="feature-number">01</span>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon icon-green" aria-hidden="true">✓</div>
+                        <div><h3>Learn as you go</h3><p>Choose an answer and see how you did.</p></div>
+                        <span class="feature-number">02</span>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon icon-orange" aria-hidden="true">↗</div>
+                        <div><h3>Track your score</h3><p>Finish the round and check your result.</p></div>
+                        <span class="feature-number">03</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- QUIZ SCREEN: hidden initially. JS will show it after Start challenge is clicked. -->
+            <section id="quiz-screen" class="quiz-screen" aria-labelledby="question-text" hidden>
+                <div class="quiz-heading-row">
+                    <button id="quit-quiz-btn" class="text-button" type="button">← Exit challenge</button>
+                    <div class="round-badge"><span class="status-dot"></span> LIVE ROUND</div>
+                </div>
+
+                <div class="quiz-layout">
+                    <div class="question-card">
+                        <div class="question-meta">
+                            <span id="question-counter" class="question-counter">QUESTION 01 <span>/ 10</span></span>
+                            <span class="topic-chip" id="active-topic">JAVASCRIPT</span>
+                        </div>
+
+                        <!-- JS will replace this sample text with the current question. -->
+                        <h2 id="question-text">Which keyword declares a block-scoped variable in JavaScript?</h2>
+                        <p class="question-helper">Choose one answer to lock it in.</p>
+
+                        <!-- JS will create or update answer buttons inside this container. -->
+                        <div id="answer-options" class="answer-options">
+                            <button class="answer-option" type="button" data-answer="a"><span class="answer-letter">A</span><span class="answer-label">let</span><span class="answer-mark" aria-hidden="true">↗</span></button>
+                            <button class="answer-option" type="button" data-answer="b"><span class="answer-letter">B</span><span class="answer-label">var</span><span class="answer-mark" aria-hidden="true">↗</span></button>
+                            <button class="answer-option" type="button" data-answer="c"><span class="answer-letter">C</span><span class="answer-label">int</span><span class="answer-mark" aria-hidden="true">↗</span></button>
+                            <button class="answer-option" type="button" data-answer="d"><span class="answer-letter">D</span><span class="answer-label">define</span><span class="answer-mark" aria-hidden="true">↗</span></button>
+                        </div>
+
+                        <!-- JS can put Correct / Try again feedback here. -->
+                        <p id="answer-feedback" class="answer-feedback" aria-live="polite"></p>
+
+                        <div class="question-footer">
+                            <span class="keyboard-hint"><span>TIP</span> Take your time, then trust your logic.</span>
+                            <button id="next-question-btn" class="primary-button next-button" type="button" disabled>Next question <span class="button-arrow" aria-hidden="true">→</span></button>
+                        </div>
+                    </div>
+
+                    <aside class="quiz-sidebar">
+                        <div class="timer-card">
+                            <div class="timer-top"><span class="timer-icon" aria-hidden="true">◷</span><span>TIME LEFT</span></div>
+                            <div id="timer-value" class="timer-value">00:20</div>
+                            <div class="timer-track"><div id="timer-bar" class="timer-fill"></div></div>
+                            <p>Keep a steady pace.</p>
+                        </div>
+
+                        <div class="round-progress-card">
+                            <span class="side-card-label">YOUR PROGRESS</span>
+                            <div class="progress-numbers"><strong id="progress-count">1</strong><span>of <span id="progress-total">10</span></span></div>
+                            <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+                            <div class="progress-bottom"><span>Current score</span><strong id="current-score">0 pts</strong></div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- RESULT SCREEN: hidden initially. JS will fill the score and show this after the round ends. -->
+            <section id="result-screen" class="result-screen" aria-labelledby="result-title" hidden>
+                <div class="result-card">
+                    <div class="result-sparkle" aria-hidden="true">✦</div>
+                    <span class="section-kicker">ROUND COMPLETE</span>
+                    <h2 id="result-title">Look at you go.</h2>
+                    <p class="result-description" id="result-message">Every round is a chance to get sharper. Here's how you did.</p>
+
+                    <div class="score-orbit">
+                        <div class="score-orbit-inner"><span id="final-score">0</span><small>POINTS</small></div>
+                    </div>
+
+                    <div class="result-stats">
+                        <div><span class="result-stat-icon correct-icon">✓</span><strong id="correct-count">0</strong><small>Correct</small></div>
+                        <div><span class="result-stat-icon incorrect-icon">×</span><strong id="incorrect-count">0</strong><small>Incorrect</small></div>
+                    </div>
+
+                    <div class="result-actions">
+                        <button id="play-again-btn" class="primary-button" type="button">Play again <span class="button-arrow" aria-hidden="true">↻</span></button>
+                        <button id="home-btn" class="secondary-button" type="button">Back to setup</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>CODEQUEST <span class="footer-dot">•</span> KEEP LEARNING, KEEP BUILDING</span>
+            <span>Made for the curious <span class="heart">♥</span></span>
+        </footer>
+    </div>
+</body>
+</html>
