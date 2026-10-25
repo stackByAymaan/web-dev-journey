@@ -1,15 +1,19 @@
-let timeLeft = 10;
+const startBtn = document.getElementById("start-quiz-btn");
+console.log(startBtn);
 
-let timerId = setInterval(function () {
-    timeLeft--;
 
-    if (timeLeft <= 0) {
-        timeLeft = 0;
-        console.log(timeLeft);
-        clearInterval(timerId);
-        console.log("Time is up!");
-        return;
-    }
+const setupScreen = document.getElementById("setup-screen");
+const quizScreen = document.getElementById("quiz-screen");
+const howItWorks = document.getElementById("how-it-works");
+const questionText = document.getElementById("question-text");
 
-    console.log(timeLeft);
-}, 1000);
+
+startBtn.addEventListener("click", function () {
+   setupScreen.hidden = true; // Settings hide
+   howItWorks.hidden = true;  // Instructions hide
+   quizScreen.hidden = false; // Quiz show
+});
+
+
+
+ 
