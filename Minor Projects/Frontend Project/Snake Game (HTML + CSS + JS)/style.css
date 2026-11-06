@@ -60,6 +60,11 @@ section {
 
 section {
     padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-primary-color);
+    gap: var(--spacing-lg);
 }
 
 section .infos{
@@ -73,4 +78,9 @@ section .infos{
 .info {
     padding: var(--spacing-sm) var(--space-md);
     border:1px solid var(--border-primary-color);
+}
+
+.board {
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
 }
