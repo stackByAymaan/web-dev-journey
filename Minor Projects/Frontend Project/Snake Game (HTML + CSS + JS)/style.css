@@ -42,13 +42,12 @@ html,
     --border-radius-xl: 20px;
     --border-radius-2xl: 24px;
 }
-
 html {
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
 main, 
@@ -60,33 +59,31 @@ section {
 
 section {
     padding: var(--spacing-2xl);
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Activates Flexbox layout */
+    flex-direction: column; /* Arranges child elements vertically */
     height: 100%;
     background-color: var(--bg-primary-color);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-lg); /* Adds space between flex items */
 }
 
-section .infos{
+section .infos {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* Arranges direct children in a row */
+    justify-content: space-between; /* Distributes items across the main axis */
 }
-
-
 
 .info {
-    padding: var(--spacing-sm) var(--space-md);
-    border:1px solid var(--border-primary-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-primary-color);
 }
 
 .board {
     border: 1px solid var(--border-primary-color);
-    flex-grow: 1;
-    display: grid;
+    flex-grow: 1; /* Takes up the remaining available space */
+    display: grid; /* Activates CSS Grid layout */
     grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    /* Creates as many columns as fit, with a minimum width of 30px */
 }
-
 
 .block {
     border: 1px solid var(--border-primary-color);
