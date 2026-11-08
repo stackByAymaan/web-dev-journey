@@ -15,6 +15,7 @@ html,
 
     /* Background color */
     --bg-primary-color: #FFECCB;
+    --bg-fill-color: #38d127;
 
     /* Text color */
     --text-primary-color: #FFA97B;
@@ -81,10 +82,15 @@ section .infos {
     border: 1px solid var(--border-primary-color);
     flex-grow: 1; /* Takes up the remaining available space */
     display: grid; /* Activates CSS Grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
     /* Creates as many columns as fit, with a minimum width of 30px */
 }
 
 .block {
     border: 1px solid var(--border-primary-color);
+}
+
+
+.fill {
+    background-color: var(--bg-fill-color);
 }
