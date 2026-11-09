@@ -12,7 +12,7 @@ const snake = [
     {
         x: 1, y: 3
     }
-];
+];  
 
 let direction = 'down';
 
@@ -67,3 +67,5 @@ setInterval(() => {
     render();
 
 }, 400);
+
+
