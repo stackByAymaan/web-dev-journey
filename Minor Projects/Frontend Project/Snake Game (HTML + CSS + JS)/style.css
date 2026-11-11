@@ -59,6 +59,20 @@ section {
     padding: 40px;
 }
 
+.btn{
+    background-color: #FFECCB;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
 section {
     padding: var(--spacing-2xl);
     display: flex; /* Activates Flexbox layout */
@@ -100,9 +114,29 @@ section .infos {
     background-color: var(--bg-food-color);
 }
 
-.modal{
+.modal {
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .start-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.modal .start-game h3 {
+    color: var(--bg-primary-color);
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
 }
