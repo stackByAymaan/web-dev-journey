@@ -1,4 +1,6 @@
 const board = document.querySelector('.board');
+const startButton = document.querySelector('#btn-start');
+const modal = document.querySelector('.modal');
 
 const blockHeight = 35;
 const blockWidth = 35;
@@ -86,6 +88,13 @@ intervalId = setInterval(() => {
     render();
 
 }, 300);
+
+startButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+    intervalId = setInterval(() => { render(); }, 300);
+});  
+
+
 
 addEventListener('keydown', (event) => {
     if (event.key === "ArrowUp") {
