@@ -32,6 +32,10 @@ const bookSchema = new mongoose.Schema({
     enum: ["Fiction", "Fantasy", "Mystery", "Horror"],
     required: true, // Genre is mandatory
   },
+  discount: {
+    type: Number,
+    default: 0, // Default discount is 0
+  },
 });
 
 // Create Model
@@ -59,4 +63,18 @@ book1
     } else {
       console.log(err);
     }
+  });
+
+
+  //* Update
+Book.findByIdAndUpdate(
+  "6af41953375f69ab1bd29274",
+  { price: 4999 },
+  { returnDocument: "after" }
+)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
   });
