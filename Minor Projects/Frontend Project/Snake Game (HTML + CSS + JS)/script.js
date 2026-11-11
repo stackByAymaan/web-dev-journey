@@ -3,8 +3,10 @@ const board = document.querySelector('.board');
 const blockHeight = 35;
 const blockWidth = 35;
 
+// Read actual board dimensions
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
+let intervalId = null;
 
 const blocks = [];
 
@@ -55,6 +57,13 @@ setInterval(() => {
         head = { x: snake[0].x - 1, y: snake[0].y };
     }
 
+    if(head.x < 0 || head.x >= rows || head.y < 0 || head.y >= cols) {
+        alert("Game Over");
+        snake.length = 0;
+        snake.push({ x: 1, y: 3 });
+        direction = "down";
+    }
+
 
     snake.forEach(segment => {
         blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
@@ -69,3 +78,16 @@ setInterval(() => {
 }, 400);
 
 
+addEventListener('keydown', (event) => {
+    if (event.key === "ArrowUp") {
+        direction = "up";
+    } else if (event.key === "ArrowDown") {
+        direction = "down";
+    } else if (event.key === "ArrowLeft") {
+        direction = "left";
+    }  else if (event.key === "ArrowRight") {
+        direction = "right";
+    }  else if (event.key === " ") {
+        direction = null;
+    }
+});
