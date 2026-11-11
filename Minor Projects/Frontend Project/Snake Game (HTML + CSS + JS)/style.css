@@ -16,6 +16,7 @@ html,
     /* Background color */
     --bg-primary-color: #FFECCB;
     --bg-fill-color: #38d127;
+    --bg-food-color: #ff3b3b;
 
     /* Text color */
     --text-primary-color: #FFA97B;
@@ -93,4 +94,15 @@ section .infos {
 
 .fill {
     background-color: var(--bg-fill-color);
+}
+
+.food {
+    background-color: var(--bg-food-color);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
 }
