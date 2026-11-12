@@ -2,25 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
 
 html,
- body {
+body {
     height: 100%;
     width: 100%;
 }
 
-
 :root {
 
-    /* Background color */
-    --bg-primary-color: #FFECCB;
-    --bg-fill-color: #38d127;
-    --bg-food-color: #ff3b3b;
+    /* Background colors */
+    --bg-primary-color: #0B1220;
+    --bg-board-color: #111D30;
+    --bg-card-color: #17263C;
+    --bg-fill-color: #57E3B1;
+    --bg-food-color: #FF647C;
 
-    /* Text color */
-    --text-primary-color: #FFA97B;
+    /* Text colors */
+    --text-primary-color: #EAF2FF;
+    --text-secondary-color: #A8B9D1;
 
+    /* Accent colors */
+    --accent-color: #FFC857;
+    --accent-hover-color: #FFD778;
+
+    /* Border colors */
+    --border-primary-color: #30445F;
 
     /* Spacing variables */
     --spacing-xs: 4px;
@@ -31,12 +39,7 @@ html,
     --spacing-2xl: 40px;
     --spacing-3xl: 48px;
 
-
-     /* Border colors*/
-     --border-primary-color: #FFA97B;
-
-
-     /* Border radius */
+    /* Border radius */
     --border-radius-xs: 4px;
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
@@ -44,99 +47,120 @@ html,
     --border-radius-xl: 20px;
     --border-radius-2xl: 24px;
 }
+
 html {
     background-color: var(--bg-primary-color);
     color: var(--text-primary-color);
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-behavior: smooth;
 }
 
-main, 
+main,
 section {
     width: 100%;
     height: 100%;
     padding: 40px;
 }
 
-.btn{
-    background-color: #FFECCB;
-    padding: var(--spacing-sm) var(--spacing-md);
+/* Button styling */
+.btn {
+    background-color: var(--accent-color);
+    color: #172033;
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
     border-radius: var(--border-radius-sm);
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn:hover{
-    transform: scale(1.1);
+.btn:hover {
+    background-color: var(--accent-hover-color);
+    transform: scale(1.05);
 }
 
-
+/* Main game section */
 section {
     padding: var(--spacing-2xl);
-    display: flex; /* Activates Flexbox layout */
-    flex-direction: column; /* Arranges child elements vertically */
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background-color: var(--bg-primary-color);
-    gap: var(--spacing-lg); /* Adds space between flex items */
+    gap: var(--spacing-lg);
 }
 
+/* Score information */
 section .infos {
     width: 100%;
-    display: flex; /* Arranges direct children in a row */
-    justify-content: space-between; /* Distributes items across the main axis */
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
 }
 
 .info {
     padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-card-color);
     border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary-color);
 }
 
+/* Game board */
 .board {
     border: 1px solid var(--border-primary-color);
-    flex-grow: 1; /* Takes up the remaining available space */
-    display: grid; /* Activates CSS Grid layout */
+    border-radius: var(--border-radius-sm);
+    flex-grow: 1;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
-    /* Creates as many columns as fit, with a minimum width of 30px */
+    background-color: var(--bg-board-color);
+    overflow: hidden;
 }
 
+/* Individual grid blocks */
 .block {
-    border: 1px solid var(--border-primary-color);
+    border: 1px solid #263A54;
 }
 
-
+/* Snake body */
 .fill {
     background-color: var(--bg-fill-color);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
+/* Food */
 .food {
     background-color: var(--bg-food-color);
+    border-radius: 50%;
 }
 
+/* Modal overlay */
 .modal {
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(4, 9, 18, 0.78);
     backdrop-filter: blur(7px);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.modal .start-game{
+/* Start game content */
+.modal .start-game {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-lg);
 }
 
+/* Modal heading */
 .modal .start-game h3 {
-    color: var(--bg-primary-color);
-    font-size: 24px;
+    color: var(--text-primary-color);
+    font-size: 26px;
     font-weight: 600;
     text-align: center;
 }
