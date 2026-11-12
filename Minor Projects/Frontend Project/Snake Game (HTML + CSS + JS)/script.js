@@ -1,3 +1,6 @@
+const blockHeight = 35;
+const blockWidth = 35;
+
 const board = document.querySelector('.board');
 const startButton = document.querySelector('#btn-start');
 const modal = document.querySelector('.modal');
@@ -5,8 +8,16 @@ const startGameModal = document.querySelector('.start-game');
 const gameOverModal = document.querySelector('.game-over');
 const restartButton = document.querySelector('#btn-restart');
 
-const blockHeight = 35;
-const blockWidth = 35;
+const highScoreElement = document.querySelector('#high-score');
+const scoreElement = document.querySelector('#score');
+const timeElement = document.querySelector('#time');
+
+let highScore = localStorage.getItem('highScore') || 0;
+let score = 0;
+let time = '00:00';
+
+highScoreElement.innerText = highScore;
+highScoreElement.innerText = highScore;
 
 // Read actual board dimensions
 const cols = Math.floor(board.clientWidth / blockWidth);
@@ -63,6 +74,8 @@ function render() {
         return;
     }
 
+
+    // Food consuming logic
     if (head.x === food.x && head.y === food.y) {
         blocks[`${food.x}-${food.y}`].classList.remove("food");
 
@@ -72,9 +85,17 @@ function render() {
         };
 
         blocks[`${food.x}-${food.y}`].classList.add("food");
-
         snake.unshift(head);
-    }
+
+        score +=10;
+        scoreElement.innerText = score;
+
+        if (score > highScore) {
+            highScore = score;
+            highScoreElement.innerText = highScore;
+            localStorage.setItem('highScore', highScore);
+        };
+    };
 
     snake.forEach(segment => {
         blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
@@ -91,9 +112,27 @@ function render() {
 
 startButton.addEventListener('click', () => {
     modal.style.display = 'none';
+
     intervalId = setInterval(() => {
         render();
     }, 300);
+
+    timeIntervalId = setInterval(() => {
+        let [min, sec] = time.split(":").map(Number);
+
+        sec++;
+
+        if (sec === 60) {
+            min++;
+            sec = 0;
+        }
+
+        time = `${String(min).padStart(2, '0')}
+        :${String(sec).padStart(2, '0')}`;
+
+        timeElement.innerText = time;
+
+    }, 1000);
 });
 
 
@@ -104,6 +143,13 @@ function restartGame() {
     snake.forEach(segment => {
         blocks[`${segment.x}-${segment.y}`].classList.remove("fill");
     });
+
+    score = 0;
+    time = '00:00';
+
+    scoreElement.innerText = score;
+    timeElement.innerText = time;
+    highScoreElement.innerText = highScore;
 
     modal.style.display = 'none';
 
