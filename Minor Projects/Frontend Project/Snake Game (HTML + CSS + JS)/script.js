@@ -23,6 +23,19 @@ highScoreElement.innerText = highScore;
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
 
+
+// FIXED GAME BOARD SIZE
+
+board.style.gridTemplateColumns = `repeat(${cols}, ${blockWidth}px)`;
+board.style.gridAutoRows = `${blockHeight}px`;
+
+board.style.width = `${cols * blockWidth + 2}px`;
+board.style.height = `${rows * blockHeight + 2}px`;
+
+board.style.flex = '0 0 auto';
+board.style.alignSelf = 'center';
+
+
 let intervalId = null;
 
 let food = { x: Math.floor(Math.random() * rows), y: Math.floor(Math.random() * cols) };
@@ -127,8 +140,7 @@ startButton.addEventListener('click', () => {
             sec = 0;
         }
 
-        time = `${String(min).padStart(2, '0')}
-        :${String(sec).padStart(2, '0')}`;
+        time = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
 
         timeElement.innerText = time;
 
