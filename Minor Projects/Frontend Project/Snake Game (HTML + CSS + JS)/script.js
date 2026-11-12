@@ -35,8 +35,8 @@ for (let row = 0; row < rows; row++) {
 }
 
 function render() {
+    
     let head = null;
-
     blocks[`${food.x}-${food.y}`].classList.add("food");
 
     if (direction === "left") {
@@ -83,17 +83,12 @@ function render() {
 
 }
 
-intervalId = setInterval(() => {
-
-    render();
-
-}, 300);
-
 startButton.addEventListener('click', () => {
     modal.style.display = 'none';
-    intervalId = setInterval(() => { render(); }, 300);
-});  
-
+    intervalId = setInterval(() => {
+        render();
+    }, 300);
+});
 
 
 addEventListener('keydown', (event) => {
