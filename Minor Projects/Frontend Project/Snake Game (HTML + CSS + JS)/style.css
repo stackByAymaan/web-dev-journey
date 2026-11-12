@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -13,22 +14,22 @@ body {
 :root {
 
     /* Background colors */
-    --bg-primary-color: #0B1220;
-    --bg-board-color: #111D30;
-    --bg-card-color: #17263C;
-    --bg-fill-color: #57E3B1;
-    --bg-food-color: #FF647C;
+    --bg-primary-color: #FFF9E8;
+    --bg-board-color: #FFFDF5;
+    --bg-card-color: #FFFFFF;
+    --bg-fill-color: #2391FF;
+    --bg-food-color: #F70063;
 
     /* Text colors */
-    --text-primary-color: #EAF2FF;
-    --text-secondary-color: #A8B9D1;
+    --text-primary-color: #243B63;
+    --text-secondary-color: #53627A;
 
     /* Accent colors */
-    --accent-color: #FFC857;
-    --accent-hover-color: #FFD778;
+    --accent-color: #FFCD54;
+    --accent-hover-color: #FFF83F;
 
     /* Border colors */
-    --border-primary-color: #30445F;
+    --border-primary-color: #FFCD54;
 
     /* Spacing variables */
     --spacing-xs: 4px;
@@ -66,7 +67,7 @@ section {
 /* Button styling */
 .btn {
     background-color: var(--accent-color);
-    color: #172033;
+    color: #243B63;
     padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
     border-radius: var(--border-radius-sm);
@@ -105,6 +106,7 @@ section .infos {
     border: 1px solid var(--border-primary-color);
     border-radius: var(--border-radius-sm);
     color: var(--text-primary-color);
+
 }
 
 /* Game board */
@@ -120,7 +122,7 @@ section .infos {
 
 /* Individual grid blocks */
 .block {
-    border: 1px solid #263A54;
+    border: 1px solid rgba(35, 145, 255, 0.25);
 }
 
 /* Snake body */
@@ -142,7 +144,7 @@ section .infos {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(4, 9, 18, 0.78);
+    background-color: rgba(36, 59, 99, 0.55);
     backdrop-filter: blur(7px);
     display: flex;
     justify-content: center;
@@ -150,7 +152,7 @@ section .infos {
 }
 
 /* Start game content */
-.modal .start-game, 
+.modal .start-game,
 .modal .game-over {
     display: flex;
     flex-direction: column;
