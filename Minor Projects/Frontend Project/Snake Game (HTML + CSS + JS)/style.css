@@ -150,11 +150,16 @@ section .infos {
 }
 
 /* Start game content */
-.modal .start-game {
+.modal .start-game, 
+.modal .game-over {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-lg);
+}
+
+.modal .game-over {
+    display: none;
 }
 
 /* Modal heading */
