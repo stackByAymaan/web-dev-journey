@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write new chat</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b141a;
+            color: #e9edef;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #202c33;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #2a3942;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            text-align: center;
+            color: #25d366;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            background-color: #111b21;
+            border: 1px solid #2a3942;
+            border-radius: 9px;
+            color: #e9edef;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #25d366;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+        }
+
+        input::placeholder {
+            color: #8696a0;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #25d366;
+            color: #111b21;
+            border: none;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <h3>Write new chat..</h3>
+
+        <form>
+            <input placeholder="Who are you?" name="from">
+
+            <textarea name="msg">Write your message here...</textarea>
+
+            <input placeholder="Add Receiver" name="to">
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
