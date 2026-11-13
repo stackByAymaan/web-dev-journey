@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const Chat = require("./chat.js");
+const Chat = require("./models/chat.js");
 
 app.use("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
