@@ -1,0 +1,123 @@
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b141a;
+    color: #e9edef;
+    padding: 35px;
+    min-height: 100vh;
+}
+
+/* Heading */
+h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #25d366;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a3942;
+}
+
+/* Chat Cards */
+body > div {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 130px;
+    margin: 18px auto;
+    padding: 22px;
+    background-color: #202c33;
+    border-radius: 14px;
+    border: 1px solid #2a3942;
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Hover Effect */
+body > div:hover {
+    background-color: #263943;
+    transform: translateY(-3px);
+    border-color: #25d366;
+}
+
+/* Fake Avatar */
+body > div::before {
+    content: "💬";
+    width: 55px;
+    height: 55px;
+    background-color: #075e54;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    grid-row: span 3;
+}
+
+/* Sender and Receiver */
+p {
+    font-size: 15px;
+    color: #aebac1;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Message Highlight */
+.msg {
+    background-color: #005c4b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border-bottom-right-radius: 3px;
+    margin: 10px 0;
+    width: fit-content;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.msg p {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (min-width: 1100px) {
+    body > div {
+        width: 85%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    body > div {
+        padding: 14px;
+        grid-template-columns: 45px 1fr;
+        gap: 10px;
+    }
+
+    body > div::before {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .msg p {
+        font-size: 14px;
+    }
+}
