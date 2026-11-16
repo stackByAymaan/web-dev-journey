@@ -90,17 +90,19 @@
 
 <body>
     <div class="chat-container">
+
         <h3>Write new chat..</h3>
 
-        <form>
-            <input placeholder="Who are you?" name="from">
+        <form method="POST" action="/chats">
+            <input placeholder="Who are you?" name="from" />
 
             <textarea name="msg">Write your message here...</textarea>
 
-            <input placeholder="Add Receiver" name="to">
+            <input placeholder="Add receiver" name="to" />
 
-            <button type="submit">Send Message</button>
+            <button type="submit">Create Chat</button>
         </form>
+
     </div>
 </body>
 </html>
