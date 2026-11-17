@@ -148,3 +148,19 @@ form button:hover {
     margin-top: 8px;
     line-height: 1.6;
 }
+
+.edit-btn {
+    background-color: #202c33;
+    color: #25d366;
+    border: 1px solid #25d366;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.edit-btn:hover {
+    background-color: #25d366;
+    color: #111b21;
+}
