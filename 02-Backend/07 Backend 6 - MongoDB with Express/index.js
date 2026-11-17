@@ -57,6 +57,13 @@ app.post("/chats", (req, res) => {
 });
 
 
+//^ Edit Route
+app.get("/chats/:id/edit",async (res, req) => {
+  let {id} = req.params;
+  let chat = await Chat.findById(id);
+      res.render("edit.ejs" , {chat});
+});
+
 
 app.get("/", (req, res) => {
   res.send("root is working");
