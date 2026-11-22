@@ -10,13 +10,13 @@
 <body>
     <h3> All Listings </h3>
     <a href="/listings/new">
-    <button>Create New Listing</button>
+        <button>Create New Listing</button>
     </a>
     <ul>
         <ul>
             <% for(let listing of allListings) { %>
                 <li>
-                    <a href="/listing/<%= listing._id %>">
+                    <a href="/listings/<%= listing._id %>">
                         <%= listing.title %>
                     </a>
                 </li>
