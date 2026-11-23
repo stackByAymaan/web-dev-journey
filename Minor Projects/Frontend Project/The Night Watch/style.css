@@ -1,0 +1,1082 @@
+:root {
+  --nb-yellow: #FFEB3B;
+  --nb-red: #FF5252;
+  --nb-blue: #2196F3;
+  --nb-black: #000000;
+  --nb-green: #4CAF50;
+  --nb-orange: #FF9800;
+  --nb-paper: #FFFBEB;
+  --nb-white: #FFFFFF;
+  --border: 3px solid var(--nb-black);
+  --shadow-small: 4px 4px 0 var(--nb-black);
+  --shadow-medium: 6px 6px 0 var(--nb-black);
+  --shadow-large: 8px 8px 0 var(--nb-black);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--nb-paper);
+  color: var(--nb-black);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==================== 02. TYPOGRAPHY ==================== */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+.section-kicker,
+.eyebrow,
+.control-label,
+.results-hint,
+.footer-year {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+}
+
+/* ==================== 03. SHARED BUTTONS AND INPUTS ==================== */
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 11px 18px;
+  border: 3px solid var(--nb-black);
+  border-radius: 0;
+  color: var(--nb-black);
+  font-weight: 700;
+  box-shadow: var(--shadow-small);
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--nb-black);
+}
+
+.button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--nb-black);
+}
+
+.button-dark {
+  background: var(--nb-black);
+  color: var(--nb-white);
+}
+
+.button-blue {
+  background: var(--nb-blue);
+  color: var(--nb-black);
+}
+
+.button-yellow {
+  background: var(--nb-yellow);
+  color: var(--nb-black);
+}
+
+.text-input {
+  width: 100%;
+  min-height: 54px;
+  border: 3px solid var(--nb-black);
+  border-radius: 0;
+  background: var(--nb-white);
+  color: var(--nb-black);
+  box-shadow: var(--shadow-small);
+}
+
+.text-input::placeholder {
+  color: #5F5F5F;
+  opacity: 1;
+}
+
+.button:focus-visible,
+.text-input:focus-visible,
+a:focus-visible,
+.dialog-close:focus-visible,
+.clear-search:focus-visible {
+  outline: 3px solid var(--nb-black);
+  outline-offset: 4px;
+}
+
+/* ==================== 04. HEADER AND PAGE LAYOUT ==================== */
+.page-shell {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 2px solid var(--nb-black);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-yellow);
+  box-shadow: 3px 3px 0 var(--nb-black);
+  font-size: .85rem;
+  font-weight: 700;
+  transform: rotate(-5deg);
+}
+
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -.06em;
+}
+
+.brand-name span {
+  color: #333;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  padding: 8px 0;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.header-favorites {
+  min-height: 43px;
+  padding: 8px 12px;
+  font-size: .82rem;
+}
+
+.watchlist-count {
+  display: inline-grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 2px solid var(--nb-white);
+  border-radius: 50%;
+  font-size: .7rem;
+}
+
+/* ==================== 05. HERO AND POSTER ARTWORK ==================== */
+.hero-section {
+  display: grid;
+  min-height: 475px;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 48px;
+  padding: 68px 5% 76px;
+  border-bottom: 2px solid var(--nb-black);
+}
+
+.hero-copy {
+  max-width: 560px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 23px;
+}
+
+.eyebrow-dot,
+.results-dot {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--nb-black);
+  border-radius: 50%;
+  background: var(--nb-green);
+}
+
+.hero-copy h1 {
+  margin-bottom: 20px;
+  font-size: clamp(3rem, 6vw, 5.25rem);
+}
+
+.highlight-word {
+  position: relative;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.highlight-word::after {
+  position: absolute;
+  z-index: -1;
+  right: -5px;
+  bottom: 3px;
+  left: -5px;
+  height: 42%;
+  background: var(--nb-yellow);
+  content: "";
+  transform: rotate(-1.5deg);
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-bottom: 25px;
+  color: #343127;
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.hero-button {
+  min-width: 190px;
+  min-height: 55px;
+  font-size: .98rem;
+}
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 27px;
+  color: #454136;
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.proof-icon {
+  color: #8A4A00;
+  font-size: 1.2rem;
+}
+
+.hero-art {
+  position: relative;
+  display: flex;
+  min-height: 335px;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster {
+  position: absolute;
+  display: flex;
+  width: 218px;
+  height: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 4px solid var(--nb-black);
+  box-shadow: 8px 8px 0 var(--nb-black);
+}
+
+.poster-back {
+  z-index: 1;
+  background: var(--nb-red);
+  transform: translate(-68px, 10px) rotate(-11deg);
+}
+
+.poster-front {
+  z-index: 2;
+  background: var(--nb-yellow);
+  transform: translate(55px, -4px) rotate(8deg);
+}
+
+.poster-kicker,
+.poster-bottom {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.poster-symbol {
+  align-self: center;
+  font-size: 6.5rem;
+  line-height: .8;
+}
+
+.poster-face {
+  align-self: center;
+  font-size: 5.7rem;
+  line-height: .8;
+}
+
+.poster-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.art-sticker {
+  position: absolute;
+  z-index: 3;
+  padding: 10px 13px;
+  border: 3px solid var(--nb-black);
+  box-shadow: var(--shadow-small);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.sticker-top {
+  top: 8px;
+  right: 10px;
+  background: var(--nb-blue);
+  transform: rotate(7deg);
+}
+
+.sticker-bottom {
+  bottom: 4px;
+  left: 4px;
+  background: var(--nb-green);
+  transform: rotate(-7deg);
+}
+
+/* ==================== 06. SEARCH AND FILTERS ==================== */
+.browse-section {
+  padding: 70px 0 82px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 11px;
+  color: #4C473B;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.heading-period {
+  color: var(--nb-red);
+}
+
+.section-side-note {
+  margin-bottom: 4px;
+  color: #5F5B50;
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: end;
+  gap: 16px;
+  padding: 18px;
+  border: 3px solid var(--nb-black);
+  background: #FFF3B0;
+  box-shadow: var(--shadow-medium);
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-self: end;
+  align-items: center;
+  min-width: 0;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.search-input {
+  padding: 0 44px 0 48px;
+  font-size: .95rem;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clear-search {
+  position: absolute;
+  right: 11px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--nb-black);
+  font-size: 1.5rem;
+}
+
+.genre-control {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.control-label {
+  font-size: .62rem;
+}
+
+.genre-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0 42px 0 14px;
+  background-color: var(--nb-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.genre-select:hover {
+  background-color: #FFF3B0;
+}
+
+.genre-select option {
+  background: var(--nb-paper);
+  color: var(--nb-black);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.genre-select option:checked {
+  background: var(--nb-yellow);
+  color: var(--nb-black);
+}
+
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 34px 0 19px;
+}
+
+.results-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.results-label p {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.results-hint {
+  color: #696456;
+  font-size: .62rem;
+}
+
+/* ==================== 07. MOVIE CARDS ==================== */
+/* JS card class names: movie-card, movie-poster, movie-poster-art, movie-poster-label,
+   movie-info, movie-title, movie-meta, movie-tags, genre-tag, rating, movie-actions,
+   favorite-button and favorite-button-active. */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.movie-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-white);
+  box-shadow: var(--shadow-medium);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.movie-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--nb-black);
+}
+
+.movie-poster {
+  position: relative;
+  display: grid;
+  min-height: 205px;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 3px solid var(--nb-black);
+  background: var(--nb-blue);
+  color: var(--nb-black);
+}
+
+.movie-poster-art {
+  max-width: 85%;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: .9;
+  text-align: center;
+  letter-spacing: -.08em;
+}
+
+.movie-poster-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 8px;
+  border: 2px solid var(--nb-black);
+  background: var(--nb-paper);
+  font-size: .62rem;
+  font-weight: 700;
+}
+
+.movie-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 17px;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: #514C41;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+.rating {
+  color: var(--nb-black);
+  font-weight: 700;
+}
+
+.movie-title {
+  margin-bottom: 13px;
+  font-size: 1.35rem;
+  overflow-wrap: anywhere;
+}
+
+.movie-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  margin-bottom: 17px;
+}
+
+.genre-tag {
+  display: inline-block;
+  padding: 5px 8px;
+  border: 2px solid var(--nb-black);
+  background: var(--nb-yellow);
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.movie-actions .button {
+  min-height: 39px;
+  flex: 1;
+  padding: 7px 9px;
+  font-size: .75rem;
+}
+
+.favorite-button {
+  min-width: 42px;
+  flex: 0 0 42px !important;
+  padding: 5px !important;
+  background: var(--nb-white);
+  color: var(--nb-black);
+  font-size: 1rem !important;
+}
+
+.favorite-button-active {
+  background: var(--nb-red);
+}
+
+.poster-yellow {
+  background: var(--nb-yellow);
+}
+
+.poster-red {
+  background: var(--nb-red);
+}
+
+.poster-blue {
+  background: var(--nb-blue);
+}
+
+.poster-green {
+  background: var(--nb-green);
+}
+
+.poster-orange {
+  background: var(--nb-orange);
+}
+
+/* ==================== 08. EMPTY STATE AND BOTTOM BANNER ==================== */
+.empty-state {
+  padding: 55px 20px;
+  border: 3px dashed var(--nb-black);
+  background: #FFF3B0;
+  text-align: center;
+}
+
+.empty-icon {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 14px;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-yellow);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+}
+
+.empty-state p {
+  color: #514C41;
+}
+
+.bottom-banner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 28px 30px;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-red);
+  box-shadow: var(--shadow-large);
+}
+
+.banner-symbol {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  place-items: center;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-yellow);
+  font-size: 2.3rem;
+}
+
+.banner-copy {
+  flex: 1;
+}
+
+.banner-copy .section-kicker {
+  margin-bottom: 7px;
+  color: #252018;
+}
+
+.banner-copy h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.bottom-banner .button {
+  flex-shrink: 0;
+}
+
+/* ==================== 09. FOOTER ==================== */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 35px 0;
+}
+
+.footer-brand {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.footer-brand span {
+  margin-left: 3px;
+  font-size: .55rem;
+  vertical-align: top;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #625D51;
+  font-size: .72rem;
+  text-align: center;
+}
+
+.footer-year {
+  color: #625D51;
+  font-size: .58rem;
+}
+
+/* ==================== 10. PICKER DIALOG AND TOAST ==================== */
+.dialog-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(0 0 0 / 68%);
+}
+
+.picker-dialog {
+  position: relative;
+  width: min(480px, 100%);
+  padding: 35px;
+  border: 4px solid var(--nb-black);
+  background: var(--nb-paper);
+  box-shadow: 10px 10px 0 var(--nb-yellow);
+  text-align: center;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.picker-icon {
+  display: grid;
+  width: 70px;
+  height: 70px;
+  place-items: center;
+  margin: 18px auto;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-yellow);
+  box-shadow: var(--shadow-small);
+  font-size: 2.7rem;
+}
+
+.picker-dialog h2 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.picker-countdown {
+  min-height: 25px;
+  color: #5F5B50;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.picker-result {
+  min-height: 80px;
+  margin: 20px 0;
+  padding: 17px;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-yellow);
+}
+
+.picker-placeholder {
+  margin: 0;
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.picker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 30;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100% - 48px);
+  padding: 14px 18px;
+  border: 3px solid var(--nb-black);
+  background: var(--nb-green);
+  box-shadow: var(--shadow-medium);
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.toast-mark {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 2px solid var(--nb-black);
+  background: var(--nb-white);
+}
+
+/* ==================== 11. RESPONSIVE LAYOUTS ==================== */
+@media (max-width: 850px) {
+  .hero-section {
+    gap: 20px;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 7vw, 4rem);
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .poster {
+    width: 185px;
+    height: 265px;
+  }
+
+  .poster-title {
+    font-size: 2rem;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    width: min(100% - 30px, 480px);
+  }
+
+  .site-header {
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .header-nav {
+    order: 3;
+    width: 100%;
+    gap: 22px;
+  }
+
+  .nav-link {
+    font-size: .8rem;
+  }
+
+  .header-favorites {
+    min-height: 39px;
+    font-size: .72rem;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 48px 0 55px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 13vw, 4.2rem);
+  }
+
+  .hero-description {
+    font-size: .92rem;
+  }
+
+  .hero-art {
+    min-height: 310px;
+    margin-top: 8px;
+  }
+
+  .poster {
+    width: 180px;
+    height: 255px;
+  }
+
+  .sticker-top {
+    right: 4%;
+  }
+
+  .browse-section {
+    padding: 52px 0 60px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-side-note {
+    text-align: left;
+  }
+
+  .filter-panel {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding: 13px;
+  }
+
+  .search-box {
+    align-self: stretch;
+  }
+
+  .genre-control {
+    gap: 7px;
+  }
+
+  .results-toolbar {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .movie-poster {
+    min-height: 220px;
+  }
+
+  .bottom-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .bottom-banner .button {
+    width: 100%;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 0;
+  }
+
+  .site-footer p {
+    text-align: left;
+  }
+
+  .picker-dialog {
+    padding: 30px 20px 22px;
+  }
+
+  .picker-actions {
+    flex-direction: column;
+  }
+
+  .picker-actions .button {
+    width: 100%;
+  }
+
+  .toast {
+    right: 15px;
+    bottom: 15px;
+    max-width: calc(100% - 30px);
+  }
+}
+
+/* ==================== 12. REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
