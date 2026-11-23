@@ -108,6 +108,8 @@ console.log(Math.random());
 console.log(Math.PI);
 console.log(Math.E);
 
+console.log(Math.max(...scores));  //...Spread Operator
+
 console.log(" ");
 
 // Random integers
@@ -127,3 +129,59 @@ console.log(" ");
 // Method ChainingMath.floor(Math.random() * 10) + 1;
 let random = 
 console.log(random);
+
+
+
+// Bracket notation
+const movie = {
+    title: "Interstellar",
+    rating: 8.7,
+    year: 2014
+};
+
+let property = "rating";
+
+console.log(movie[property]); // 8.7
+
+
+// Objects with functions
+const movie1 = {
+    title: "Interstellar",
+    rating: 8.7,
+
+    showDetails: function() {
+        console.log("Movie:", this.title);
+        console.log("Rating:", this.rating);
+    }
+};
+
+movie1.showDetails();
+
+const student1 = {
+    name: "Aman",
+
+    greet() {
+        console.log("Hello " + this.name);
+    }
+};
+
+student1.greet();
+
+// Important Object Methods
+
+const film = {
+    title: "Interstellar",
+    year: 2014,
+    rating: 8.7
+};
+
+console.log(Object.keys(film));
+console.log(Object.values(film));
+console.log(Object.entries(film));
+console.log("title" in film);
+console.log(Object.hasOwn(film, "title")); // true
+console.log(Object.hasOwn(film, "genre")); // false
+
+
+
+
