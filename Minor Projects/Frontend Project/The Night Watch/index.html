@@ -37,4 +37,194 @@
 
     <main>
 
-     
+      <!-- Hero section -->
+      <section class="hero-section" id="discover">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            YOUR NEXT MOVIE NIGHT STARTS HERE
+          </span>
+
+          <h1>
+            Too many movies.<br>
+            <span class="highlight-word">Zero idea?</span>
+          </h1>
+
+          <p class="hero-description">
+            Skip the endless scrolling. Find a movie that fits your mood,
+            or let the roulette pick one for you.
+          </p>
+
+          <button class="button button-blue hero-button" id="btn-surprise" type="button">
+            <span aria-hidden="true">✳</span>
+            Surprise me
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <div class="hero-proof">
+            <span class="proof-icon" aria-hidden="true">★</span>
+            <span>A hand-picked collection for your next movie night</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-sticker sticker-top">NO MORE<br>SCROLLING!</div>
+
+          <div class="poster poster-back">
+            <span class="poster-kicker">TONIGHT'S PLAN</span>
+            <span class="poster-symbol">✳</span>
+            <span class="poster-title">GOOD<br>MOVIES<br>ONLY.</span>
+          </div>
+
+          <div class="poster poster-front">
+            <span class="poster-kicker">YOUR NEXT WATCH</span>
+            <span class="poster-face">◉</span>
+            <span class="poster-title">PRESS<br>PLAY.</span>
+            <span class="poster-bottom">REEL ROULETTE / 001</span>
+          </div>
+
+          <div class="art-sticker sticker-bottom">PICK<br>YOUR VIBE ↗</div>
+        </div>
+      </section>
+
+      <!-- Movie search and filters -->
+      <section class="browse-section" aria-labelledby="browse-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">THE GOOD STUFF</span>
+            <h2 id="browse-title">
+              Find your next watch<span class="heading-period">.</span>
+            </h2>
+          </div>
+
+          <p class="section-side-note">
+            A little less scrolling.<br>
+            A lot more watching.
+          </p>
+        </div>
+
+        <div class="filter-panel">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+              class="text-input search-input"
+              id="movie-search"
+              type="search"
+              placeholder="Search a movie..."
+              autocomplete="off"
+              aria-label="Search movies by title"
+            >
+            <button
+              class="clear-search"
+              id="btn-clear-search"
+              type="button"
+              aria-label="Clear search"
+            >×</button>
+          </div>
+
+          <label class="genre-control" for="genre-filter">
+            <span class="control-label">GENRE</span>
+            <select class="text-input genre-select" id="genre-filter">
+              <option value="all">All genres</option>
+              <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
+              <option value="animation">Animation</option>
+              <option value="comedy">Comedy</option>
+              <option value="crime">Crime</option>
+              <option value="drama">Drama</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="horror">Horror</option>
+              <option value="mystery">Mystery</option>
+              <option value="romance">Romance</option>
+              <option value="sci-fi">Sci-Fi</option>
+              <option value="thriller">Thriller</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Movie results -->
+        <div class="results-toolbar">
+          <div class="results-label">
+            <span class="results-dot" aria-hidden="true"></span>
+            <p id="results-count">Loading the good stuff...</p>
+          </div>
+
+          <span class="results-hint">PICK A MOVIE. MAKE IT A NIGHT.</span>
+        </div>
+
+        <!-- Movie cards -->
+        <div class="movie-grid" id="movie-grid" aria-live="polite"></div>
+
+        <!-- No results message -->
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-icon" aria-hidden="true">?</span>
+          <h3>No movies found.</h3>
+          <p>Try another title or choose a different genre.</p>
+          <button class="button button-dark" id="btn-reset-filters" type="button">
+            Reset filters
+          </button>
+        </div>
+      </section>
+
+      <!-- Bottom banner -->
+      <section class="bottom-banner">
+        <div class="banner-symbol" aria-hidden="true">✳</div>
+
+        <div class="banner-copy">
+          <span class="section-kicker">CAN'T MAKE UP YOUR MIND?</span>
+          <h2>Let fate pick tonight's movie.</h2>
+        </div>
+
+        <button class="button button-yellow" id="btn-banner-surprise" type="button">
+          Spin the roulette
+          <span aria-hidden="true">↗</span>
+        </button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <a class="footer-brand" href="#">REEL ROULETTE<span>®</span></a>
+      <p>Made for people who spend longer choosing than watching.</p>
+      <span class="footer-year">YOUR NEXT WATCH IS OUT THERE.</span>
+    </footer>
+  </div>
+
+  <!-- Movie picker -->
+  <div class="dialog-backdrop" id="picker-dialog" hidden>
+    <section class="picker-dialog" role="dialog" aria-modal="true" aria-labelledby="picker-title">
+      <button
+        class="dialog-close"
+        id="btn-close-picker"
+        type="button"
+        aria-label="Close movie picker"
+      >×</button>
+
+      <span class="section-kicker">THE ROULETTE HAS SPOKEN</span>
+      <div class="picker-icon" aria-hidden="true">✳</div>
+      <h2 id="picker-title">Your movie is...</h2>
+      <p class="picker-countdown" id="picker-countdown" aria-live="polite">Ready?</p>
+
+      <div class="picker-result" id="picker-result" aria-live="polite">
+        <p class="picker-placeholder">A good movie night is one spin away.</p>
+      </div>
+
+      <div class="picker-actions">
+        <button class="button button-dark" id="btn-spin-again" type="button">
+          Spin again
+        </button>
+        <button class="button button-yellow" id="btn-close-picker-bottom" type="button">
+          Sounds good!
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Toast message -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span class="toast-mark" aria-hidden="true">✓</span>
+    <span id="toast-message">Added to your watchlist</span>
+  </div>
+
+</body>
+</html>
